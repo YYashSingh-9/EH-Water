@@ -10,12 +10,12 @@ const FormMain = () => {
         <input
           type="text"
           placeholder="Is it water shortage?"
-          name="issue_input"
+          id="issue_input"
         />
         <br />
-        <label htmlFor="issue_location">Where problem occured</label>
+        <label htmlFor="state_selection">Where problem occured</label>
         <br />
-        <select name="state_selection" placeholder="select state">
+        <select id="state_selection" placeholder="select state">
           <option value="Andhra Pradesh">Andhra Pradesh</option>
           <option value="Arunachal Pradesh">Arunachal Pradesh</option>
           <option value="Assam">Assam</option>
@@ -59,11 +59,11 @@ const FormMain = () => {
         <br />
         <label htmlFor="city">Enter your city</label>
         <br />
-        <input type="text" name="city" />
+        <input type="text" id="city" />
         <br />
         <label type="root_problem" />
         <br />
-        <textarea name="root_problem" placeholder="What's the issue" />
+        <textarea id="root_problem" placeholder="What's the issue" />
         <br />
         <Button type="submit" variant="outlined">
           Share Now
