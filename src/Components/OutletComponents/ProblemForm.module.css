@@ -1,0 +1,47 @@
+.formMain {
+  max-width: 100%;
+  padding: 2% 10%;
+  color: rgb(73, 73, 73);
+  border: 0.1rem solid #cccccc;
+  border-top: none;
+  border-bottom: none;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+}
+.formMain label {
+  color: rgb(73, 73, 73);
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-top: 1.2rem;
+}
+.inputForm {
+  text-align: center;
+}
+.inputForm input,
+textarea {
+  width: 50.2%;
+  font-size: 1.5rem;
+  border: 0.1rem solid #cccccc;
+  border-radius: 1rem;
+  padding: 0.7rem 2rem;
+  outline: none;
+  margin-bottom: 1rem;
+  margin-top: 0.6rem;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+
+  text-transform: capitalize;
+}
+.inputForm select {
+  width: 55%;
+  font-size: 1.5rem;
+  border: 0.1rem solid #cccccc;
+  border-radius: 1rem;
+  padding: 0.7rem 5rem;
+  outline: none;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+  text-transform: capitalize;
+}
+.inputForm textarea {
+  height: 15rem;
+}
