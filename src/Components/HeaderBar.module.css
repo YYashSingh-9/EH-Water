@@ -1,0 +1,13 @@
+.logoDiv {
+  padding: 1rem 0%;
+  max-height: 10rem;
+  max-width: 20rem;
+}
+.logoDiv img {
+  max-height: 100%;
+  max-width: 100%;
+}
+.appbar {
+  border: 0.1rem solid #cccccc;
+  border-top: none;
+}
