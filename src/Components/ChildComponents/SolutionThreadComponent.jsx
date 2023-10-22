@@ -1,7 +1,5 @@
 import classes from "./SolutionThreadComponent.module.css";
 import { Box, Container, Grid } from "@mui/material";
-import Button from "@mui/material/Button";
-import BorderColorIcon from "@mui/icons-material/BorderColor";
 const SolutionThreadComponent = () => {
   return (
     <>
@@ -15,8 +13,7 @@ const SolutionThreadComponent = () => {
           >
             <Grid item lg={12} md={12} sm={12} xs={12}>
               <Box className={classes.titleNlocation}>
-                <h3>Water Leakage near my home</h3>
-                <h4>Chhattisgarh, Bilaspur</h4>
+                <h3>Solution by - Yash</h3>
               </Box>
             </Grid>
             <Grid item lg={12} md={12} sm={12} xs={12}>
@@ -33,13 +30,6 @@ const SolutionThreadComponent = () => {
                   passages, and more recently with desktop publishing software
                   like Aldus PageMaker including versions of Lorem Ipsum
                 </p>
-              </Box>
-            </Grid>
-            <Grid item lg={12} md={12} sm={12} xs={12}>
-              <Box className={classes.btn}>
-                <Button variant="text" endIcon={<BorderColorIcon />}>
-                  Give Solution
-                </Button>
               </Box>
             </Grid>
           </Grid>

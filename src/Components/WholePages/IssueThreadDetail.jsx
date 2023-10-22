@@ -43,18 +43,6 @@ const IssueThreadDetail_Page = () => {
                 <SolutionThreadComponent />
                 <SolutionThreadComponent />
                 <SolutionThreadComponent />
-                <SolutionThreadComponent />
-                <SolutionThreadComponent />
-                <SolutionThreadComponent />
-                <SolutionThreadComponent />
-                <SolutionThreadComponent />
-                <SolutionThreadComponent />
-                <SolutionThreadComponent />
-                <SolutionThreadComponent />
-                <SolutionThreadComponent />
-                <SolutionThreadComponent />
-                <SolutionThreadComponent />
-                <SolutionThreadComponent />
               </Box>
             </Box>
           </Grid>
