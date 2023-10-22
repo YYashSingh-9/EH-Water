@@ -1,14 +1,19 @@
 import classes from "./IssueThreadComponent.module.css";
 import { Box, Container, Grid } from "@mui/material";
-import Button from "@mui/material/Button";
-import BorderColorIcon from "@mui/icons-material/BorderColor";
+import { useNavigate } from "react-router-dom";
 import SolutionModal from "../WholePages/SolutionModal";
 
 const IssueThreadComponent = () => {
+  const Navigate = useNavigate();
   return (
     <>
       <Container maxWidth="lg">
-        <Box className={classes.issueComponent}>
+        <Box
+          className={classes.issueComponent}
+          onClick={() => {
+            Navigate("/issues/issue-details");
+          }}
+        >
           <Grid
             container
             direction={"column"}
@@ -39,9 +44,6 @@ const IssueThreadComponent = () => {
             </Grid>
             <Grid item lg={12} md={12} sm={12} xs={12}>
               <Box className={classes.btn}>
-                {/* <Button variant="text" endIcon={<BorderColorIcon />}>
-                  Give Solution
-                </Button> */}
                 <SolutionModal />
               </Box>
             </Grid>

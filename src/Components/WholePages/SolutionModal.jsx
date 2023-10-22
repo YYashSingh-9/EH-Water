@@ -41,7 +41,11 @@ const SolutionModal = () => {
                 className={classes.txtArea}
                 placeholder="ex- whatever solution feels right, share it here."
               />
-              <Button endIcon={<BorderColorIcon />} variant="contained">
+              <Button
+                endIcon={<BorderColorIcon />}
+                variant="contained"
+                onClick={handleClose}
+              >
                 Post
               </Button>
             </Box>
