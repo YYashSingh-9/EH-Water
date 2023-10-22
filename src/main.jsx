@@ -16,7 +16,7 @@ const router = createBrowserRouter([
       { path: "/", element: <ProblemForm /> },
       { path: "/issues", element: <WorldIssuesComponent /> },
       { path: "/issues/issue-details", element: <IssueThreadDetail_Page /> },
-      { path: "/user-details", element: <IssueThreadDetail_Page /> },
+      { path: "/user-details", element: <UserPage /> },
     ],
   },
 ]);
