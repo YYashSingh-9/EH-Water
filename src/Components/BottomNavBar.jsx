@@ -45,7 +45,7 @@ export default function BottomNavBar() {
         <BottomNavigationAction
           icon={<AccountCircleIcon className={classes.icons} />}
           onClick={() => {
-            Navigate("/");
+            Navigate("/issues/issue-details");
           }}
         />
       </BottomNavigation>
