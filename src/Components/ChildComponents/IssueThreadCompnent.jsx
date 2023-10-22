@@ -10,13 +10,13 @@ const IssueThreadComponent = () => {
           <Grid
             container
             direction={"column"}
-            alignItems={"start"}
-            justifyItems={"start"}
+            alignItems={"center"}
+            justifyItems={"center"}
           >
             <Grid item lg={12} md={12} sm={12} xs={12}>
               <Box className={classes.titleNlocation}>
                 <h3>Water Leakage near my home</h3>
-                <h4>Chhattisgarh</h4>
+                <h4>Chhattisgarh, Bilaspur</h4>
               </Box>
             </Grid>
             <Grid item lg={12} md={12} sm={12} xs={12}>
@@ -36,9 +36,11 @@ const IssueThreadComponent = () => {
               </Box>
             </Grid>
             <Grid item lg={12} md={12} sm={12} xs={12}>
-              <Button variant="text" endIcon={<BorderColorIcon />}>
-                Give Solution
-              </Button>
+              <Box className={classes.btn}>
+                <Button variant="text" endIcon={<BorderColorIcon />}>
+                  Give Solution
+                </Button>
+              </Box>
             </Grid>
           </Grid>
         </Box>

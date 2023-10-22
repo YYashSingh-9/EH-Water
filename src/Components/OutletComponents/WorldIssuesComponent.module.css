@@ -1,7 +1,6 @@
 .issueCompParent {
   max-width: 100%;
-  max-height: 100%;
-  overflow-y: scroll;
+  max-height: 100vh;
   border: 0.1rem solid #cccccc;
   border-top: 0;
   border-bottom: 0;
@@ -17,6 +16,15 @@
   margin-bottom: 1rem;
 }
 
-.issueCompParent::-webkit-scrollbar {
+/* .issueCompParent::-webkit-scrollbar {
+  display: none;
+} */
+.issueParent {
+  overflow-y: scroll;
+  max-height: 50vh;
+  padding-bottom: 12rem;
+  scroll-behavior: smooth;
+}
+.issueParent::-webkit-scrollbar {
   display: none;
 }
