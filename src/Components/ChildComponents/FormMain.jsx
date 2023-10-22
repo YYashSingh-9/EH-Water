@@ -59,11 +59,14 @@ const FormMain = () => {
         <br />
         <label htmlFor="city">Enter your city</label>
         <br />
-        <input type="text" id="city" />
+        <input type="text" id="city" placeholder="ex-Bilaspur" />
         <br />
         <label type="root_problem" />
         <br />
-        <textarea id="root_problem" placeholder="What's the issue" />
+        <textarea
+          id="root_problem"
+          placeholder="Please explain issue in details and */ don't use foul language/abusive word or mocking."
+        />
         <br />
         <Button type="submit" variant="contained">
           Share Now

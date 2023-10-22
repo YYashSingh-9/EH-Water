@@ -5,6 +5,11 @@
   overflow-y: scroll;
   padding: 1rem 2%;
   border: 0.1rem solid #cccccc;
+  border-top: 0;
+  border-bottom: 0;
+}
+.mainDetailPage::-webkit-scrollbar {
+  display: none;
 }
 .mainIssueInfo h3 {
   font-size: 2rem;
