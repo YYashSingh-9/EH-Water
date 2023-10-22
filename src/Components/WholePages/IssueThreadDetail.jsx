@@ -1,5 +1,6 @@
 import { Grid, Box } from "@mui/material";
 import classes from "./IssueThreadDetails.module.css";
+import SolutionThreadComponent from "../ChildComponents/SolutionThreadComponent";
 
 const IssueThreadDetail_Page = () => {
   return (
@@ -38,7 +39,23 @@ const IssueThreadDetail_Page = () => {
           <Grid item lg={12} md={12} sm={12}>
             <Box className={classes.solutionsParentDiv}>
               <h2>Provided Solutions</h2>
-              <Box className={classes.solutionsChildDiv}></Box>
+              <Box className={classes.solutionsChildDiv}>
+                <SolutionThreadComponent />
+                <SolutionThreadComponent />
+                <SolutionThreadComponent />
+                <SolutionThreadComponent />
+                <SolutionThreadComponent />
+                <SolutionThreadComponent />
+                <SolutionThreadComponent />
+                <SolutionThreadComponent />
+                <SolutionThreadComponent />
+                <SolutionThreadComponent />
+                <SolutionThreadComponent />
+                <SolutionThreadComponent />
+                <SolutionThreadComponent />
+                <SolutionThreadComponent />
+                <SolutionThreadComponent />
+              </Box>
             </Box>
           </Grid>
         </Grid>

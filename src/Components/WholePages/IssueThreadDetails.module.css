@@ -29,7 +29,12 @@
 }
 
 .solutionsParentDiv {
-  max-height: 20vh;
+  height: auto;
+  text-align: center;
+}
+.solutionsChildDiv {
+  max-height: 100%;
+  /* overflow-y: scroll; */
 }
 .namespan {
   font-weight: 700;
