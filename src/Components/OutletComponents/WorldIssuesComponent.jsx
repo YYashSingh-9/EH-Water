@@ -1,5 +1,6 @@
 import { Grid, Box } from "@mui/material";
 import classes from "./WorldIssuesComponent.module.css";
+import SearchBar from "../ChildComponents/SearchBar";
 
 const WorldIssuesComponent = () => {
   return (
@@ -11,7 +12,9 @@ const WorldIssuesComponent = () => {
           alignItems={"center"}
           justifyContent={"center"}
         >
-          <Grid item lg={12} md={12} sm={12} sx={12}></Grid>
+          <Grid item lg={12} md={12} sm={12} sx={12}>
+            <SearchBar />
+          </Grid>
         </Grid>
       </Box>
     </>

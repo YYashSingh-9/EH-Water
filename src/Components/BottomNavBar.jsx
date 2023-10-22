@@ -5,14 +5,12 @@ import BottomNavigationAction from "@mui/material/BottomNavigationAction";
 import NoteAltIcon from "@mui/icons-material/NoteAlt";
 import LanguageIcon from "@mui/icons-material/Language";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
-import RestoreIcon from "@mui/icons-material/Restore";
-import FavoriteIcon from "@mui/icons-material/Favorite";
-import LocationOnIcon from "@mui/icons-material/LocationOn";
+import { useNavigate } from "react-router-dom";
 import classes from "./BottomNavBar.module.css";
 
 export default function BottomNavBar() {
   const [value, setValue] = React.useState(0);
-
+  const Navigate = useNavigate();
   return (
     <Box
       sx={{
@@ -34,12 +32,21 @@ export default function BottomNavBar() {
         <BottomNavigationAction
           className={classes.bna}
           icon={<NoteAltIcon className={classes.icons} />}
+          onClick={() => {
+            Navigate("/");
+          }}
         />
         <BottomNavigationAction
           icon={<LanguageIcon className={classes.icons} />}
+          onClick={() => {
+            Navigate("/issues");
+          }}
         />
         <BottomNavigationAction
           icon={<AccountCircleIcon className={classes.icons} />}
+          onClick={() => {
+            Navigate("/");
+          }}
         />
       </BottomNavigation>
     </Box>
