@@ -2,6 +2,9 @@ import * as React from "react";
 import Box from "@mui/material/Box";
 import BottomNavigation from "@mui/material/BottomNavigation";
 import BottomNavigationAction from "@mui/material/BottomNavigationAction";
+import NoteAltIcon from "@mui/icons-material/NoteAlt";
+import LanguageIcon from "@mui/icons-material/Language";
+import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import RestoreIcon from "@mui/icons-material/Restore";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
@@ -30,13 +33,13 @@ export default function BottomNavBar() {
       >
         <BottomNavigationAction
           className={classes.bna}
-          icon={<RestoreIcon className={classes.icons} />}
+          icon={<NoteAltIcon className={classes.icons} />}
         />
         <BottomNavigationAction
-          icon={<FavoriteIcon className={classes.icons} />}
+          icon={<LanguageIcon className={classes.icons} />}
         />
         <BottomNavigationAction
-          icon={<LocationOnIcon className={classes.icons} />}
+          icon={<AccountCircleIcon className={classes.icons} />}
         />
       </BottomNavigation>
     </Box>

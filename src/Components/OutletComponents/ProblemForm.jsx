@@ -13,6 +13,19 @@ const ProblemForm = () => {
             alignItems={"center"}
             justifyContent={"center"}
           >
+            <Grid
+              item
+              lg={12}
+              md={12}
+              sm={12}
+              xs={12}
+              textAlign={"center"}
+              sx={{ maxHeight: "5rem" }}
+            >
+              <Box className={classes.title}>
+                <h2>Home</h2>
+              </Box>
+            </Grid>
             <Grid item lg={12} md={12} sm={12} xs={12}>
               <FormMain />
             </Grid>
@@ -29,6 +42,10 @@ const ProblemForm = () => {
                     possible help them with a solution by clicking give solution
                     button{" "}
                   </h4>
+                  <h5>
+                    If You like this app and idea then you can contribute in
+                    this app by clicking here.
+                  </h5>
                 </span>
               </Box>
             </Grid>

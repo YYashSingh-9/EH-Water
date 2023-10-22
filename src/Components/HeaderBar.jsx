@@ -17,6 +17,7 @@ const HeaderBar = () => {
         >
           <Box className={classes.logoDiv}>
             <img src={Logo} />
+            <span className={classes.betaTag}>Beta</span>
           </Box>
         </AppBar>
       </Box>

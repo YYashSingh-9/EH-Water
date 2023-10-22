@@ -1,6 +1,7 @@
 .formMain {
   max-width: 100%;
-  padding: 2% 10%;
+
+  padding: 1rem 10%;
   color: rgb(73, 73, 73);
   border: 0.1rem solid #cccccc;
   border-top: none;
@@ -23,9 +24,39 @@
 .impNoteSpan h3 {
   font-size: 1.8rem;
   margin-bottom: 0.3rem;
+  margin-top: 1rem;
   font-weight: 700;
 }
 .impNoteSpan h4 {
-  margin-top: 0.3rem;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+
   font-size: 1.1rem;
+}
+.title {
+  font-size: 1.5rem;
+}
+.title h2 {
+  margin-top: 0;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+}
+.impNoteSpan h5 {
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  text-decoration: underline;
+  color: #1778f2;
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+.impNoteSpan h5:active {
+  cursor: pointer;
+  color: #0b386e;
+}
+.impNote:hover {
+  cursor: pointer;
+  border-color: #1778f2;
+  transition: 0.1s ease;
 }

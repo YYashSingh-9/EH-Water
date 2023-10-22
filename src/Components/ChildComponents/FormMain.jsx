@@ -65,7 +65,7 @@ const FormMain = () => {
         <br />
         <textarea id="root_problem" placeholder="What's the issue" />
         <br />
-        <Button type="submit" variant="outlined">
+        <Button type="submit" variant="contained">
           Share Now
         </Button>
       </Form>

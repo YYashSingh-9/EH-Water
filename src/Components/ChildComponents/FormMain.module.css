@@ -1,9 +1,9 @@
 label {
   color: rgb(73, 73, 73);
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   text-transform: uppercase;
   font-weight: 700;
-  margin-top: 1.2rem;
+  margin-top: 0rem;
 }
 .inputForm {
   text-align: center;
@@ -11,7 +11,7 @@ label {
 .inputForm input,
 textarea {
   width: 50.2%;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   border: 0.1rem solid #cccccc;
   border-radius: 1rem;
   padding: 0.7rem 2rem;
@@ -27,7 +27,7 @@ textarea {
 }
 .inputForm select {
   width: 55%;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   border: 0.1rem solid #cccccc;
   border-radius: 1rem;
   padding: 0.7rem 5rem;
@@ -43,11 +43,11 @@ textarea {
   background-color: rgb(249, 249, 249);
 }
 .inputForm textarea {
-  height: 15rem;
+  height: 12rem;
 }
 
 .inputForm button {
   font-size: 1.6rem;
-  margin-top: 1rem;
+
   font-weight: 600;
 }
