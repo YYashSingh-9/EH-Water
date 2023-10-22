@@ -2,6 +2,8 @@ import classes from "./IssueThreadComponent.module.css";
 import { Box, Container, Grid } from "@mui/material";
 import Button from "@mui/material/Button";
 import BorderColorIcon from "@mui/icons-material/BorderColor";
+import SolutionModal from "../WholePages/SolutionModal";
+
 const IssueThreadComponent = () => {
   return (
     <>
@@ -37,9 +39,10 @@ const IssueThreadComponent = () => {
             </Grid>
             <Grid item lg={12} md={12} sm={12} xs={12}>
               <Box className={classes.btn}>
-                <Button variant="text" endIcon={<BorderColorIcon />}>
+                {/* <Button variant="text" endIcon={<BorderColorIcon />}>
                   Give Solution
-                </Button>
+                </Button> */}
+                <SolutionModal />
               </Box>
             </Grid>
           </Grid>
