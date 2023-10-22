@@ -1,13 +1,13 @@
 .logoDiv {
   padding: 1rem 0%;
   max-height: 10rem;
-  max-width: 20rem;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 .logoDiv img {
-  max-height: 100%;
+  max-height: 7rem;
   max-width: 100%;
 }
 .appbar {
@@ -23,4 +23,10 @@
   font-size: 1.5rem;
   background-color: #1778f2;
   margin-left: 1.5rem;
+}
+
+.logos {
+  display: flex;
+  align-items: center;
+  justify-content: right;
 }
