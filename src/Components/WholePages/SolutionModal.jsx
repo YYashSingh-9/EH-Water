@@ -37,7 +37,10 @@ const SolutionModal = () => {
         >
           <Box sx={style}>
             <Box className={classes.textModal}>
-              <textarea className={classes.txtArea} />
+              <textarea
+                className={classes.txtArea}
+                placeholder="ex- whatever solution feels right, share it here."
+              />
               <Button endIcon={<BorderColorIcon />} variant="contained">
                 Post
               </Button>

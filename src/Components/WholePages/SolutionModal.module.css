@@ -1,14 +1,17 @@
 .textModal {
-  max-width: 30rem;
+  max-width: 50rem;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
+.textModal button {
+  font-size: 1.1rem;
+}
 .txtArea {
   font-size: 1.4rem;
   padding: 1rem 2rem;
-  height: 10rem;
-  width: 30rem;
+  height: 20rem;
+  width: 50rem;
   border: 0.1rem solid #cccccc;
 }
 
