@@ -7,7 +7,7 @@ const SearchBar = () => {
     <>
       <Box className={classes.searchBar}>
         <input type="search" />
-        <SearchIcon />
+        <SearchIcon className={classes.icn} />
       </Box>
     </>
   );

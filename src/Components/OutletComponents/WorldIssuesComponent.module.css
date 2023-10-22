@@ -1,0 +1,21 @@
+.issueCompParent {
+  max-width: 100%;
+  max-height: 100%;
+  overflow-y: scroll;
+  border: 0.1rem solid #cccccc;
+  border-top: 0;
+  border-bottom: 0;
+  color: #2c2c2c;
+}
+.issueCompParent h2 {
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 2.2rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.issueCompParent::-webkit-scrollbar {
+  display: none;
+}
