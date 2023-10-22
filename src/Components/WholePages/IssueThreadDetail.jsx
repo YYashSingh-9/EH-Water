@@ -11,10 +11,14 @@ const IssueThreadDetail_Page = () => {
           alignItems={"center"}
           justifyContent={"center"}
         >
-          <Grid item lg={12} md={12} sm={12}>
+          <Grid item lg={12} md={12} sm={12} textAlign={"center"}>
             <Box className={classes.mainIssueInfo}>
               <h3>Water Leakage near my home</h3>
               <h4>Chhattisgarh, Bilaspur</h4>
+              <h4>
+                This issue is raised by -
+                <span className={classes.namespan}> baba blacksheep</span>
+              </h4>
             </Box>
             <Box className={classes.issueText}>
               <p>

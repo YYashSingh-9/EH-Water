@@ -1,0 +1,39 @@
+.mainDetailPage {
+  color: rgb(15, 15, 15);
+  width: 100%;
+}
+.mainIssueInfo h3 {
+  font-size: 2rem;
+  text-transform: uppercase;
+}
+.mainIssueInfo h4 {
+  font-size: 1.5rem;
+}
+.issueText p {
+  font-size: 1.3rem;
+}
+.issueText {
+  max-height: 40vh;
+  overflow-y: scroll;
+  border-top: 0.1rem solid #cccccc;
+}
+.issueText::-webkit-scrollbar {
+  display: none;
+}
+
+.solutionsParentDiv h2 {
+  font-size: 1.8rem;
+  text-decoration: underline;
+  color: #1778f2;
+  text-transform: uppercase;
+}
+
+.solutionsParentDiv {
+  max-height: 20vh;
+}
+.namespan {
+  font-weight: 700;
+  text-transform: capitalize;
+  color: #1778f2;
+  text-decoration: underline;
+}
