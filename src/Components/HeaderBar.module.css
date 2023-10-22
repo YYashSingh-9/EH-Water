@@ -2,6 +2,9 @@
   padding: 1rem 0%;
   max-height: 10rem;
   max-width: 20rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .logoDiv img {
   max-height: 100%;
@@ -12,5 +15,12 @@
   border-top: none;
 }
 .betaTag {
-  color: #1778f2;
+  color: #ffffff;
+  padding: 0.2rem 1.2rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  letter-spacing: 0.1rem;
+  font-size: 1.5rem;
+  background-color: #1778f2;
+  margin-left: 1.5rem;
 }
