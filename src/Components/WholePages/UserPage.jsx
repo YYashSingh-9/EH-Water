@@ -3,7 +3,9 @@ import LogoutIcon from "@mui/icons-material/Logout";
 import EditIcon from "@mui/icons-material/Edit";
 import { Box, Grid, Button } from "@mui/material";
 import ProfileThreadComponent from "../ChildComponents/ProfileThreadComponent";
+import { useNavigate } from "react-router-dom";
 const UserPage = () => {
+  const Navigate = useNavigate();
   return (
     <>
       <Box className={classes.mainUserDiv}>
@@ -24,7 +26,13 @@ const UserPage = () => {
                 <Button variant="outlined" endIcon={<LogoutIcon />}>
                   Logout
                 </Button>
-                <Button variant="outlined" endIcon={<EditIcon />}>
+                <Button
+                  variant="outlined"
+                  endIcon={<EditIcon />}
+                  onClick={() => {
+                    Navigate("/user-details/edit-user");
+                  }}
+                >
                   Edit Profile
                 </Button>
               </Box>
