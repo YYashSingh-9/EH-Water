@@ -4,11 +4,10 @@
   border: 0.1rem solid #cccccc;
   border-bottom: 0;
   border-top: 0;
-  color: rgb(15, 15, 15);
 }
 .solutionsDiv {
   border-radius: 1rem;
-  border: 0.1rem solid #ececec;
+  border: 0.1rem solid #cccccc;
   padding: 1rem;
 
   max-height: 55vh;
@@ -32,4 +31,11 @@
   text-transform: capitalize;
   text-decoration: underline;
   color: #1778f2;
+}
+.nameDiv {
+  border: 0.1rem solid #cccccc;
+  margin-bottom: 2rem;
+  border-radius: 1rem;
+  padding: 1rem;
+  color: rgb(28, 28, 28);
 }

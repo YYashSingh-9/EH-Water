@@ -1,6 +1,7 @@
 .issueComponent {
   border: 0.1rem solid #ececec;
   max-width: 100%;
+  color: rgb(28, 28, 28);
   margin-top: 1rem;
   padding: 1rem 1rem;
   box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
