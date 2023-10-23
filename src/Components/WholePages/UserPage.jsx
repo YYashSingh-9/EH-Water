@@ -1,7 +1,6 @@
 import classes from "./User.module.css";
 import { Box, Grid } from "@mui/material";
-import SolutionThreadComponent from "../ChildComponents/SolutionThreadComponent";
-
+import ProfileThreadComponent from "../ChildComponents/ProfileThreadComponent";
 const UserPage = () => {
   return (
     <>
@@ -21,10 +20,8 @@ const UserPage = () => {
           </Grid>
           <Grid item lg={12} md={12} sm={12} xs={12}>
             <Box className={classes.solutionsDiv}>
-              <SolutionThreadComponent />
-              <SolutionThreadComponent />
-              <SolutionThreadComponent />
-              <SolutionThreadComponent />
+              <ProfileThreadComponent />
+              <ProfileThreadComponent />
             </Box>
           </Grid>
         </Grid>

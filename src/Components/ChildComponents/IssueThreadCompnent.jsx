@@ -8,12 +8,7 @@ const IssueThreadComponent = () => {
   return (
     <>
       <Container maxWidth="lg">
-        <Box
-          className={classes.issueComponent}
-          onClick={() => {
-            Navigate("/issues/issue-details");
-          }}
-        >
+        <Box className={classes.issueComponent}>
           <Grid
             container
             direction={"column"}
@@ -21,13 +16,23 @@ const IssueThreadComponent = () => {
             justifyItems={"center"}
           >
             <Grid item lg={12} md={12} sm={12} xs={12}>
-              <Box className={classes.titleNlocation}>
+              <Box
+                className={classes.titleNlocation}
+                onClick={() => {
+                  Navigate("/issues/issue-details");
+                }}
+              >
                 <h3>Water Leakage near my home</h3>
                 <h4>Chhattisgarh, Bilaspur</h4>
               </Box>
             </Grid>
             <Grid item lg={12} md={12} sm={12} xs={12}>
-              <Box className={classes.issueText}>
+              <Box
+                className={classes.issueText}
+                onClick={() => {
+                  Navigate("/issues/issue-details");
+                }}
+              >
                 <p>
                   Lorem Ipsum is simply dummy text of the printing and
                   typesetting industry. Lorem Ipsum has been the industry's

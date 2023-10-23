@@ -7,10 +7,15 @@
   color: rgb(15, 15, 15);
 }
 .solutionsDiv {
-  border: 0.1rem solid #cccccc;
-  padding-bottom: 2rem;
+  border-radius: 1rem;
+  border: 0.1rem solid #ececec;
+  padding: 1rem;
+
   max-height: 55vh;
   overflow-y: scroll;
+}
+.solutionsDiv::-webkit-scrollbar {
+  display: none;
 }
 .nameDiv h2 {
   font-size: 1.8rem;

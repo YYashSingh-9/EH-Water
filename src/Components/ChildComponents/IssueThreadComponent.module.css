@@ -1,9 +1,12 @@
 .issueComponent {
-  border: 0.1rem solid #cccccc;
+  border: 0.1rem solid #ececec;
   max-width: 80%;
+
   margin: auto;
   margin-top: 2rem;
+  border-radius: 1rem;
   padding: 1rem 1rem;
+  box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
 }
 .issueComponent:hover {
   background-color: #f5f5f5;
@@ -21,7 +24,7 @@
   font-size: 1.1rem;
 }
 .issueText {
-  border-top: 0.1rem solid #cccccc;
+  border-top: 0.1rem solid #ececec;
 }
 .btn button {
   font-size: 1.1rem;
