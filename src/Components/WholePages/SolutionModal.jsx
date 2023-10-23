@@ -3,7 +3,6 @@ import classes from "./SolutionModal.module.css";
 import * as React from "react";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
-import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
 
 const style = {
@@ -47,6 +46,51 @@ const SolutionModal = () => {
                 onClick={handleClose}
               >
                 Post
+              </Button>
+            </Box>
+          </Box>
+        </Modal>
+      </div>
+    </>
+  );
+};
+
+export const ContributionModal = () => {
+  const [open, setOpen] = React.useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+  return (
+    <>
+      <div>
+        <Button onClick={handleOpen}>
+          <span style={{ fontSize: "1.1rem", fontWeight: "bold" }}>
+            If You like this app and idea then you can contribute in this app by
+            clicking here.
+          </span>
+        </Button>
+        <Modal
+          open={open}
+          onClose={handleClose}
+          aria-labelledby="modal-modal-title"
+          aria-describedby="modal-modal-description"
+        >
+          <Box sx={style}>
+            <Box
+              className={classes.textModal}
+              sx={{
+                color: "rgb(28,28,28)",
+                textTransform: "capitalize",
+                textAlign: "center",
+              }}
+            >
+              <h2>
+                If You like this idea also thinks that this should reach out to
+                more people and this app should upgrade more <br />
+                Most Importantly if you believe in this idea and the change this
+                can bring then you can spread the word about this.
+              </h2>
+              <Button variant="contained" onClick={handleClose}>
+                Close
               </Button>
             </Box>
           </Box>

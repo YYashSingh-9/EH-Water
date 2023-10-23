@@ -2,6 +2,7 @@ import classes from "./ProblemForm.module.css";
 import { Grid, Box } from "@mui/material";
 import FormMain from "../ChildComponents/FormMain";
 import StarsIcon from "@mui/icons-material/Stars";
+import { ContributionModal } from "../WholePages/SolutionModal";
 const ProblemForm = () => {
   return (
     <>
@@ -42,10 +43,7 @@ const ProblemForm = () => {
                     possible help them with a solution by clicking give solution
                     button{" "}
                   </h4>
-                  <h5>
-                    If You like this app and idea then you can contribute in
-                    this app by clicking here.
-                  </h5>
+                  <ContributionModal />
                 </span>
               </Box>
             </Grid>
