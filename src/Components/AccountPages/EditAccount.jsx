@@ -1,25 +1,28 @@
 import { Form } from "react-router-dom";
 import classes from "./EditAccount.module.css";
 import { Box, Button, Grid } from "@mui/material";
+import { useSelector, useDispatch } from "react-redux";
+import { sliceActions } from "../../Store/StoreSlice";
 import { useRef } from "react";
-import { useState } from "react";
-const EditAccount = () => {
-  const ref = useRef();
-  const nameref = useRef();
-  const [emailInpState, SetEmailInpState] = useState("");
-  const [nameInpState, SetnameInpState] = useState("");
 
-  const onchangeemail = () => {
-    const emailVal = ref.current.value;
-    SetEmailInpState(emailVal);
-    console.log(emailInpState);
-  };
-  const onchangeName = () => {
+const EditAccount = () => {
+  const emailInput = useSelector((state) => state.firstSlice.EditEmailInput);
+  const nameInput = useSelector((state) => state.firstSlice.EditNameInput);
+  const dispatch = useDispatch();
+  const emailref = useRef();
+  const nameref = useRef();
+  const emaiSubmitHandler = () => {
     const nameVal = nameref.current.value;
-    SetnameInpState(nameVal);
-    console.log(nameInpState);
+    const emailVal = emailref.current.value;
+
+    dispatch(
+      sliceActions.editValuesSet({
+        emailInput: emailVal,
+        nameInput: nameVal,
+      })
+    );
+    console.log(nameInput, emailInput);
   };
-  const emaiSubmitHandler = () => {};
   return (
     <>
       <Box className={classes.mainEditPage}>
@@ -42,9 +45,8 @@ const EditAccount = () => {
                 <input
                   type="string"
                   id="name"
-                  ref={nameref}
-                  value={nameInpState}
-                  onChange={onchangeName}
+                  defaultValue={nameInput}
+                  ref={emailref}
                 />
                 <br />
                 <label htmlFor="email">User Email</label>
@@ -52,12 +54,15 @@ const EditAccount = () => {
                 <input
                   type="email"
                   id="email"
-                  ref={ref}
-                  value={emailInpState}
-                  onChange={onchangeemail}
+                  defaultValue={emailInput}
+                  ref={nameref}
                 />
                 <br />
-                <Button type="submit" variant="outlined">
+                <Button
+                  type="submit"
+                  variant="outlined"
+                  onClick={emaiSubmitHandler}
+                >
                   Change Now
                 </Button>
               </Form>
