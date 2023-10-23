@@ -8,6 +8,7 @@ import IssueThreadDetail_Page from "./Components/WholePages/IssueThreadDetail";
 import UserPage from "./Components/WholePages/UserPage";
 import LoginPage from "./Components/AccountPages/LoginPage";
 import SignupUser from "./Components/AccountPages/SignupUser";
+import EditAccount from "./Components/AccountPages/EditAccount";
 import "./index.css";
 
 const router = createBrowserRouter([
@@ -21,6 +22,7 @@ const router = createBrowserRouter([
       { path: "/user-details", element: <UserPage /> },
       { path: "/login", element: <LoginPage /> },
       { path: "/signup", element: <SignupUser /> },
+      { path: "/user-details/edit-user", element: <EditAccount /> },
     ],
   },
 ]);
