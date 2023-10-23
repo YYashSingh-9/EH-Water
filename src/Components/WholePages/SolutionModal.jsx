@@ -79,15 +79,15 @@ export const ContributionModal = () => {
               className={classes.textModal}
               sx={{
                 color: "rgb(28,28,28)",
-                textTransform: "capitalize",
+                textTransform: "uppercase",
                 textAlign: "center",
               }}
             >
               <h2>
                 If You like this idea also thinks that this should reach out to
-                more people and this app should upgrade more <br />
-                Most Importantly if you believe in this idea and the change this
-                can bring then you can spread the word about this.
+                more people and Most Importantly if you believe in this idea and
+                the change this can bring then you can spread the word about
+                this so that people who need this, get this.
               </h2>
               <Button variant="contained" onClick={handleClose}>
                 Close
