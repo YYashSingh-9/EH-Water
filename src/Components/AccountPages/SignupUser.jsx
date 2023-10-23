@@ -22,14 +22,7 @@ const SignupUser = () => {
               <SignUpForm />
             </Box>
             <Box className={classes.switchTitle}>
-              <h4>New to EH-Water? SignUp then.</h4>
-            </Box>
-          </Grid>
-          <Grid item lg={12} md={12} sm={12}>
-            <Box className={classes.defaultTitle}>
-              <h3>You can also use this account details </h3>
-              <h4>User Email - yash99@gmail.com</h4>
-              <h4>User Password - ys12345</h4>
+              <h4>Already signedup? Login then.</h4>
             </Box>
           </Grid>
         </Grid>

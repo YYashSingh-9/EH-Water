@@ -28,6 +28,14 @@ const SignUpForm = () => {
         <br />
         <input type="password" name="password" id="password" />
         <br />
+        <label htmlFor="confirmpassword">Confirm Password</label>
+        <br />
+        <input
+          type="confirmpassword"
+          name="confirmpassword"
+          id="confirmpassword"
+        />
+        <br />
         <Button type="submit" variant="outlined">
           Login
         </Button>
