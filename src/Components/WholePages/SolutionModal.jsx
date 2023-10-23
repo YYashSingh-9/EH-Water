@@ -4,6 +4,7 @@ import * as React from "react";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Modal from "@mui/material/Modal";
+import PersonPinIcon from "@mui/icons-material/PersonPin";
 
 const style = {
   position: "absolute",
@@ -83,6 +84,7 @@ export const ContributionModal = () => {
                 textAlign: "center",
               }}
             >
+              <PersonPinIcon sx={{ fontSize: "5rem" }} />
               <h2>
                 If You like this idea also thinks that this should reach out to
                 more people and Most Importantly if you believe in this idea and
