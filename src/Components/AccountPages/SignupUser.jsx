@@ -1,4 +1,5 @@
-import classes from "SignupUser.module.css";
+import classes from "./SignupUser.module.css";
+import SignUpForm from "../ChildComponents/SignupForm";
 import { Grid, Box, Button } from "@mui/material";
 const SignupUser = () => {
   return (
@@ -13,29 +14,12 @@ const SignupUser = () => {
         >
           <Grid item lg={12} md={12} sm={12}>
             <Box className={classes.title}>
-              <h2>User Login</h2>
+              <h2>Signup User</h2>
             </Box>
           </Grid>
           <Grid item lg={12} md={12} sm={12}>
             <Box className={classes.loginForm}>
-              <Form>
-                <label htmlFor="email">User Email</label>
-                <br />
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  placeholder="@example.com"
-                />
-                <br />
-                <label htmlFor="password">User Password</label>
-                <br />
-                <input type="password" name="password" id="password" />
-                <br />
-                <Button type="submit" variant="outlined">
-                  Login
-                </Button>
-              </Form>
+              <SignUpForm />
             </Box>
             <Box className={classes.switchTitle}>
               <h4>New to EH-Water? SignUp then.</h4>
