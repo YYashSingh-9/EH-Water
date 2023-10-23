@@ -1,0 +1,18 @@
+Rest work to do in this app:
+
+1.Clearing input fields when posted issue/solution.
+2.Posting solution / issue.
+3.User signup/login.
+4.Edit user info.
+5.react toastify notifications.
+6.Not allowing to post problem/solution without login/signup.
+7.Edit and logout button
+
+backend
+1.All issues model,route & function
+2.User functionalities like edit account signup login .
+3.fetching solution/issue threads of a specific user.
+4.fetching all the solutions of a issue thread.
+5.solutions model route & function
+6.All securities like cors,rate-limiter,compressor,xss,hashed encrypted password & error management.
+7.API tested with PostMan.
