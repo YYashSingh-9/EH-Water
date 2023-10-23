@@ -1,6 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { Provider } from "react-redux";
+import MainStore from "./Store/MainStore";
 import ParentComponent from "./ParentComponent";
 import ProblemForm from "./Components/OutletComponents/ProblemForm";
 import WorldIssuesComponent from "./Components/OutletComponents/WorldIssuesComponent";
@@ -29,6 +31,8 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <Provider store={MainStore}>
+      <RouterProvider router={router} />
+    </Provider>
   </React.StrictMode>
 );

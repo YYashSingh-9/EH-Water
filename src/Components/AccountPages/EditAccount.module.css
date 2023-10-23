@@ -13,10 +13,7 @@
   font-size: 1.7rem;
   text-transform: uppercase;
 }
-.title h2 {
-  margin-top: 0rem;
-  margin-bottom: 0rem;
-}
+
 .editForm {
   border: 0.1rem solid #cccccc;
   border-radius: 1rem;
@@ -68,10 +65,4 @@
 }
 .pwForm input:active {
   background-color: #f8f8f8;
-}
-.head {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  max-width: 100%;
 }
