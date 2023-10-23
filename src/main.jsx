@@ -6,6 +6,7 @@ import ProblemForm from "./Components/OutletComponents/ProblemForm";
 import WorldIssuesComponent from "./Components/OutletComponents/WorldIssuesComponent";
 import IssueThreadDetail_Page from "./Components/WholePages/IssueThreadDetail";
 import UserPage from "./Components/WholePages/UserPage";
+import LoginPage from "./Components/AccountPages/LoginPage";
 import "./index.css";
 
 const router = createBrowserRouter([
@@ -17,6 +18,7 @@ const router = createBrowserRouter([
       { path: "/issues", element: <WorldIssuesComponent /> },
       { path: "/issues/issue-details", element: <IssueThreadDetail_Page /> },
       { path: "/user-details", element: <UserPage /> },
+      { path: "/login", element: <LoginPage /> },
     ],
   },
 ]);

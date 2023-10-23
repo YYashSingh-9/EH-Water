@@ -1,8 +1,6 @@
-import { Form } from "react-router-dom";
-import classes from "./LoginPage.module.css";
+import classes from "SignupUser.module.css";
 import { Grid, Box, Button } from "@mui/material";
-
-const LoginPage = () => {
+const SignupUser = () => {
   return (
     <>
       <Box className={classes.loginBox}>
@@ -56,4 +54,4 @@ const LoginPage = () => {
   );
 };
 
-export default LoginPage;
+export default SignupUser;
