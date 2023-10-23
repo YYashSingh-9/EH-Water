@@ -1,3 +1,30 @@
 .mainUserDiv {
   padding: 1rem 15%;
+  height: 80vh;
+  border: 0.1rem solid #cccccc;
+  border-bottom: 0;
+  border-top: 0;
+  color: rgb(15, 15, 15);
+}
+.solutionsDiv {
+  border: 0.1rem solid #cccccc;
+  padding-bottom: 2rem;
+  max-height: 55vh;
+  overflow-y: scroll;
+}
+.nameDiv h2 {
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+.nameDiv h3 {
+  margin-top: 0rem;
+  font-size: 1.3rem;
+}
+.nameDiv h4 {
+  font-size: 1.4rem;
+  text-transform: capitalize;
+  text-decoration: underline;
+  color: #1778f2;
 }
