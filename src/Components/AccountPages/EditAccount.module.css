@@ -12,3 +12,55 @@
   font-size: 1.7rem;
   text-transform: uppercase;
 }
+.editForm {
+  border: 0.1rem solid #cccccc;
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
+
+  text-align: center;
+}
+.editForm label {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+.editForm input {
+  font-size: 1.5rem;
+  padding: 1rem 2rem;
+  border-radius: 1rem;
+  border: 0.1rem solid #ececec;
+  box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
+  margin-bottom: 1rem;
+}
+.editForm button {
+  font-size: 1.2rem;
+  margin-top: 1rem;
+}
+.pwForm {
+  color: rgb(28, 28, 28);
+  border: 0.1rem solid #cccccc;
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
+  margin-top: 1.5rem;
+  text-align: center;
+}
+.pwForm label {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+.pwForm input {
+  font-size: 1.5rem;
+  padding: 1rem 2rem;
+  border-radius: 1rem;
+  border: 0.1rem solid #ececec;
+  box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
+  margin-bottom: 1rem;
+}
+.pwForm button {
+  font-size: 1.2rem;
+  margin-top: 1rem;
+}
+.pwForm input:active {
+  background-color: #f8f8f8;
+}

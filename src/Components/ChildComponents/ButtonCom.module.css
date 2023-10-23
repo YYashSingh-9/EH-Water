@@ -1,0 +1,19 @@
+.btn {
+  padding: 1rem 1.5rem;
+  border: 0.1rem solid #1778f2;
+  border-radius: 1rem;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  background-color: transparent;
+  color: #1778f2;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.1s ease;
+  box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
+}
+.btn:hover {
+  background-color: #eff7ff;
+}
+.btn:active {
+  background-color: #e2f0ff;
+}

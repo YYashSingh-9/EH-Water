@@ -1,7 +1,8 @@
 import { Form } from "react-router-dom";
 import classes from "./EditAccount.module.css";
 import { Box, Button, Grid } from "@mui/material";
-import { Label } from "@mui/icons-material";
+import ButtonCom from "../ChildComponents/ButtonCom";
+
 const EditAccount = () => {
   return (
     <>
@@ -28,9 +29,9 @@ const EditAccount = () => {
                 <br />
                 <input type="email" id="email" name="email" />
                 <br />
-                <Button variant="outlines" type="submit">
+                <ButtonCom title="Change Now" type="submit">
                   Change Now
-                </Button>
+                </ButtonCom>
               </Form>
             </Box>
           </Grid>
@@ -43,12 +44,15 @@ const EditAccount = () => {
                 <br />
                 <label htmlFor="passwordconfirm">Confirm Password </label>
                 <br />
-                <Label />
                 <input
                   type="password"
                   name="passwordconfirm"
                   id="passwordconfirm"
                 />
+                <br />
+                <ButtonCom title="Change Now" type="submit">
+                  Change Now
+                </ButtonCom>
               </Form>
             </Box>
           </Grid>
