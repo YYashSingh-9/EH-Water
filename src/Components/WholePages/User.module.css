@@ -28,6 +28,7 @@
 }
 .nameDiv h4 {
   font-size: 1.4rem;
+  margin-bottom: 0;
   text-transform: capitalize;
   text-decoration: underline;
   color: #1778f2;
@@ -38,4 +39,17 @@
   border-radius: 1rem;
   padding: 1rem;
   color: rgb(28, 28, 28);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.btnSection {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: right;
+  max-width: 15rem;
+}
+.btnSection button {
+  max-height: 4rem;
+  margin-top: 1rem;
 }

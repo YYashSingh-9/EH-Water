@@ -16,3 +16,4 @@ backend
 5.solutions model route & function
 6.All securities like cors,rate-limiter,compressor,xss,hashed encrypted password & error management.
 7.API tested with PostMan.
+8.Sending jwt token with cookie.
