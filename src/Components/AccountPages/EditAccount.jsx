@@ -1,7 +1,6 @@
 import { Form } from "react-router-dom";
 import classes from "./EditAccount.module.css";
 import { Box, Button, Grid } from "@mui/material";
-import ButtonCom from "../ChildComponents/ButtonCom";
 
 const EditAccount = () => {
   return (
@@ -14,8 +13,10 @@ const EditAccount = () => {
           justifyContent={"center"}
         >
           <Grid item lg={12} md={12} sm={12}>
-            <Box className={classes.title}>
-              <h2>Edit Profile</h2>
+            <Box className={classes.head}>
+              <Box className={classes.title}>
+                <h2>Edit Profile</h2>
+              </Box>
             </Box>
           </Grid>
           <Grid item lg={12} md={12} sm={12}>
@@ -23,15 +24,15 @@ const EditAccount = () => {
               <Form>
                 <label htmlFor="name">User Name</label>
                 <br />
-                <input type="string" name="name" id="name" />
+                <input type="string" id="name" />
                 <br />
                 <label htmlFor="email">User Email</label>
                 <br />
-                <input type="email" id="email" name="email" />
+                <input type="email" id="email" />
                 <br />
-                <ButtonCom title="Change Now" type="submit">
+                <Button type="submit" variant="outlined">
                   Change Now
-                </ButtonCom>
+                </Button>
               </Form>
             </Box>
           </Grid>
@@ -40,19 +41,15 @@ const EditAccount = () => {
               <Form>
                 <label htmlFor="passwordchange">New Password</label>
                 <br />
-                <input type="text" name="passwordchange" id="passwordchange" />
+                <input type="text" id="passwordchange" />
                 <br />
                 <label htmlFor="passwordconfirm">Confirm Password </label>
                 <br />
-                <input
-                  type="password"
-                  name="passwordconfirm"
-                  id="passwordconfirm"
-                />
+                <input type="password" id="passwordconfirm" />
                 <br />
-                <ButtonCom title="Change Now" type="submit">
+                <Button type="submit" variant="outlined">
                   Change Now
-                </ButtonCom>
+                </Button>
               </Form>
             </Box>
           </Grid>
