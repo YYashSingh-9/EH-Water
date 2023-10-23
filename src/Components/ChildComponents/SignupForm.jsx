@@ -37,7 +37,7 @@ const SignUpForm = () => {
         />
         <br />
         <Button type="submit" variant="outlined">
-          Login
+          SignUp
         </Button>
       </Form>
     </>

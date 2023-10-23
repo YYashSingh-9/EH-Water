@@ -1,7 +1,10 @@
 import classes from "./SignupUser.module.css";
 import SignUpForm from "../ChildComponents/SignupForm";
-import { Grid, Box, Button } from "@mui/material";
+import { Grid, Box } from "@mui/material";
+import { useNavigate } from "react-router-dom";
+
 const SignupUser = () => {
+  const Navigate = useNavigate();
   return (
     <>
       <Box className={classes.loginBox}>
@@ -21,7 +24,12 @@ const SignupUser = () => {
             <Box className={classes.loginForm}>
               <SignUpForm />
             </Box>
-            <Box className={classes.switchTitle}>
+            <Box
+              className={classes.switchTitle}
+              onClick={() => {
+                Navigate("/login");
+              }}
+            >
               <h4>Already signedup? Login then.</h4>
             </Box>
           </Grid>

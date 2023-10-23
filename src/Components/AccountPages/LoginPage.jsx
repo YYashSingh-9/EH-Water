@@ -1,8 +1,10 @@
 import { Form } from "react-router-dom";
 import classes from "./LoginPage.module.css";
 import { Grid, Box, Button } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 
 const LoginPage = () => {
+  const Navigate = useNavigate();
   return (
     <>
       <Box className={classes.loginBox}>
@@ -39,7 +41,12 @@ const LoginPage = () => {
                 </Button>
               </Form>
             </Box>
-            <Box className={classes.switchTitle}>
+            <Box
+              className={classes.switchTitle}
+              onClick={() => {
+                Navigate("/signup");
+              }}
+            >
               <h4>New to EH-Water? SignUp then.</h4>
             </Box>
           </Grid>
