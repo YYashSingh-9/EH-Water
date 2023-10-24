@@ -41,12 +41,59 @@ exports.signUpUser = CatchAsync(async (req, res, next) => {
 
 exports.loginUser = CatchAsync(async (req, res, next) => {
   const { email, password } = req.body;
-  if (!email && !password) {
+  if (!email || !password) {
     return next(new AppError("Email or password is missing. Please re-enter"));
   }
   const user = await UserModel.findOne({ email }).select("+password");
-  if (!user || !(await user.correctPassword(user.password, password))) {
+  console.log(user);
+  if (!user || !(await user.correctPassword(password, user.password))) {
     return next(new AppError("Password sent is incorrect , try again.", 400));
   }
+  createAndSendCookie(user, 200, res);
+});
+
+exports.protect = CatchAsync(async (req, res, next) => {
+  let token;
+  if (
+    req.headers.authorization &&
+    req.headers.authorization.startsWith("Bearer")
+  ) {
+    token = req.headers.authorization.split(" ")[1];
+  } else if (req.cookies.jwt) {
+    token = req.cookies.jwt;
+    console.log(token);
+  }
+  //2.If no token then return.
+  if (!token) {
+    return next(new appError("Can't identify token , try again.", 400));
+  }
+  //3.Verifying token and extracting decoded object.
+  // const decoded = jwt.verify(token, process.env.JWT_SECRET);✅
+  const decodedToken = await promisify(jwt.verify)(
+    token,
+    process.env.JWT_SECRET
+  );
+  //4.Finding user with id from decodedToken object.
+  const current_user = await User.findById(decodedToken.id);
+  //5.Forwarding user to req so that secure routes can have access to user property
+  req.user = current_user;
+  next();
+});
+
+exports.updateMyPassword = CatchAsync(async (req, res, next) => {
+  if (!req.body.password || !req.body.passwordCurrent) {
+    return next(
+      new AppError("Missing field either password or current password"),
+      400
+    );
+  }
+  const user = await UserModel.findById(req.body.id).select("+password");
+  if (!user || !(await user.correctPassword(password, user.password))) {
+    return next(new AppError("Password sent is incorrect , try again.", 400));
+  }
+  user.password = password;
+  user.passwordConfirm = password;
+  await UserModel.save();
+
   createAndSendCookie(user, 200, res);
 });
