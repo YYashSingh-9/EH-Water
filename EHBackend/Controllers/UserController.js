@@ -9,10 +9,10 @@ const filterObj = (obj, ...allowedFields) => {
   const hel = Object.keys(obj);
   hel.forEach((el) => {
     if (allowedFields.includes(el)) {
-      return (filterObj[el] = obj[el]);
+      return (filterObject[el] = obj[el]);
     }
   });
-  return filterObj;
+  return filterObject;
 };
 
 exports.updateMe = CatchAsync(async (req, res, next) => {
@@ -22,7 +22,7 @@ exports.updateMe = CatchAsync(async (req, res, next) => {
 
   const filteredObj = filterObj(req.body, "name", "email");
 
-  const user = await UserModel.findByIdAndUpdate(req.params.id, filteredObj, {
+  const user = await UserModel.findByIdAndUpdate(req.user._id, filteredObj, {
     new: true,
     runValidators: true,
   });

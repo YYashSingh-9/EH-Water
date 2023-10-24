@@ -9,7 +9,5 @@ userRouter.use(AuthController.protect);
 userRouter
   .route("/update-password")
   .patch(AuthController.getId, AuthController.updateMyPassword);
-userRouter
-  .route("/updateMe")
-  .patch(AuthController.getId, UserController.updateMe);
+userRouter.route("/updateMe").patch(UserController.updateMe);
 module.exports = userRouter;
