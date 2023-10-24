@@ -79,7 +79,6 @@ exports.protect = CatchAsync(async (req, res, next) => {
   const current_user = await UserModel.findById(decodedToken.id);
   //5.Forwarding user to req so that secure routes can have access to user property
   req.user = current_user;
-  console.log("🥇💵💵✔", req.user);
   next();
 });
 
@@ -90,7 +89,6 @@ exports.updateMyPassword = CatchAsync(async (req, res, next) => {
       400
     );
   }
-  console.log(req.body);
   const user = await UserModel.findById(req.params.id).select("+password");
   if (
     !user ||
@@ -100,7 +98,7 @@ exports.updateMyPassword = CatchAsync(async (req, res, next) => {
   }
   user.password = req.body.password;
   user.passwordConfirm = req.body.password;
-  await UserModel.save();
+  await user.save();
 
   createAndSendCookie(user, 200, res);
 });
