@@ -25,16 +25,11 @@ const LoginPage = () => {
               <Form>
                 <label htmlFor="email">User Email</label>
                 <br />
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  placeholder="@example.com"
-                />
+                <input type="email" id="email" placeholder="@example.com" />
                 <br />
                 <label htmlFor="password">User Password</label>
                 <br />
-                <input type="password" name="password" id="password" />
+                <input type="password" id="password" />
                 <br />
                 <Button type="submit" variant="outlined">
                   Login
