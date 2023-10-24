@@ -1,5 +1,6 @@
 const UserModel = require("../Models/UserModel");
 const AppError = require("../Utils/AppError");
+const { promisify } = require("util");
 const CatchAsync = require("../Utils/CatchAsync");
 const jwt = require("jsonwebtoken");
 const dotenv = require("dotenv");
@@ -7,7 +8,7 @@ dotenv.config({ path: "./config.env" });
 
 const signToken = (id) => {
   const token = jwt.sign({ id }, process.env.JWT_SECRET, {
-    expiresIn: process.env.JWT_COOKIE_EXPIRES_IN,
+    expiresIn: process.env.JWT_EXPIRES_IN,
   });
   return token;
 };
@@ -59,13 +60,14 @@ exports.protect = CatchAsync(async (req, res, next) => {
     req.headers.authorization.startsWith("Bearer")
   ) {
     token = req.headers.authorization.split(" ")[1];
+    console.log(token);
   } else if (req.cookies.jwt) {
     token = req.cookies.jwt;
     console.log(token);
   }
   //2.If no token then return.
   if (!token) {
-    return next(new appError("Can't identify token , try again.", 400));
+    return next(new AppError("Can't identify token , try again.", 400));
   }
   //3.Verifying token and extracting decoded object.
   // const decoded = jwt.verify(token, process.env.JWT_SECRET);✅
@@ -74,9 +76,10 @@ exports.protect = CatchAsync(async (req, res, next) => {
     process.env.JWT_SECRET
   );
   //4.Finding user with id from decodedToken object.
-  const current_user = await User.findById(decodedToken.id);
+  const current_user = await UserModel.findById(decodedToken.id);
   //5.Forwarding user to req so that secure routes can have access to user property
   req.user = current_user;
+  console.log("🥇💵💵✔", req.user);
   next();
 });
 
@@ -87,13 +90,22 @@ exports.updateMyPassword = CatchAsync(async (req, res, next) => {
       400
     );
   }
-  const user = await UserModel.findById(req.body.id).select("+password");
-  if (!user || !(await user.correctPassword(password, user.password))) {
+  console.log(req.body);
+  const user = await UserModel.findById(req.params.id).select("+password");
+  if (
+    !user ||
+    !(await user.correctPassword(req.body.passwordCurrent, user.password))
+  ) {
     return next(new AppError("Password sent is incorrect , try again.", 400));
   }
-  user.password = password;
-  user.passwordConfirm = password;
+  user.password = req.body.password;
+  user.passwordConfirm = req.body.password;
   await UserModel.save();
 
   createAndSendCookie(user, 200, res);
 });
+
+exports.getId = (req, res, next) => {
+  req.params.id = req.user._id;
+  next();
+};
