@@ -5,13 +5,14 @@ const CatchAsync = require("../Utils/CatchAsync");
 
 // Helper function
 const filterObj = (obj, ...allowedFields) => {
-  console.log(obj, allowedFields);
-  const newObject = {};
-  Object.keys(obj).forEach((curr_el) => {
-    if (allowedFields.includes(curr_el))
-      return (newObject[curr_el] = obj[curr_el]);
+  const filterObject = {};
+  const hel = Object.keys(obj);
+  hel.forEach((el) => {
+    if (allowedFields.includes(el)) {
+      return (filterObj[el] = obj[el]);
+    }
   });
-  return newObject;
+  return filterObj;
 };
 
 exports.updateMe = CatchAsync(async (req, res, next) => {
@@ -24,6 +25,13 @@ exports.updateMe = CatchAsync(async (req, res, next) => {
   const user = await UserModel.findByIdAndUpdate(req.params.id, filteredObj, {
     new: true,
     runValidators: true,
+  });
+  if (!user) {
+    return next(new AppError("Can't update the user some error occured.", 400));
+  }
+  res.status(200).json({
+    status: "success",
+    data: user,
   });
 });
 exports.getOneUser = DefaultController.DefaultGetOne(UserModel);

@@ -1,5 +1,5 @@
-const CatchAsync = require("../Util/CatchAsync");
-const AppError = require("../Util/appError");
+const CatchAsync = require("../Utils/CatchAsync");
+const AppError = require("../Utils/AppError");
 
 // Find One Document..
 exports.DefaultGetOne = (model) =>
