@@ -1,12 +1,12 @@
 Rest work to do in this app:
 
-1.Clearing input fields when posted issue/solution.
+1.Redirecting when posted issue/solution.
 2.Posting solution / issue.
-3.User signup/login.
-4.Edit user info.
+3.User signup/login.✅
+4.Edit user info.✅
 5.react toastify notifications.
 6.Not allowing to post problem/solution without login/signup.
-7.Edit and logout button
+7.Edit and logout button✅
 
 backend
 1.All issues model,route & function
