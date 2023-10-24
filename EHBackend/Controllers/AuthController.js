@@ -7,7 +7,7 @@ dotenv.config({ path: "./config.env" });
 
 const signToken = (id) => {
   const token = jwt.sign({ id }, process.env.JWT_SECRET, {
-    expiresIn: process.env.JWT_EXPIRES,
+    expiresIn: process.env.JWT_COOKIE_EXPIRES_IN,
   });
   return token;
 };
@@ -37,4 +37,16 @@ exports.signUpUser = CatchAsync(async (req, res, next) => {
     return next(new AppError("Failed to create user", 400));
   }
   createAndSendCookie(userData, 200, res);
+});
+
+exports.loginUser = CatchAsync(async (req, res, next) => {
+  const { email, password } = req.body;
+  if (!email && !password) {
+    return next(new AppError("Email or password is missing. Please re-enter"));
+  }
+  const user = await UserModel.findOne({ email }).select("+password");
+  if (!user || !(await user.correctPassword(user.password, password))) {
+    return next(new AppError("Password sent is incorrect , try again.", 400));
+  }
+  createAndSendCookie(user, 200, res);
 });
