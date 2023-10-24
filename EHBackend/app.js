@@ -1,9 +1,12 @@
 const express = require("express");
 const cookieParser = require("cookie-parser");
-const mongoSanitize = require("express-mongo-sanitize");
-const xss = require("xss-clean");
-const rateLimit = require("express-rate-limit");
 const compression = require("compression");
+const cors = require("cors");
+const mongoSanitize = require("express-mongo-sanitize");
+const rateLimit = require("express-rate-limit");
+const path = require("path");
+const xss = require("xss-clean");
+const userRouter = require("./Routes/UserRoute");
 const app = express();
 
 // * Global middleware (CORS) (Cross Origin Resource Sharing)
@@ -38,5 +41,5 @@ app.use("/api", limiter);
 // 5.Compressing the data shared -> this middleware compresses the data(JSON,BSON,Files,Images) shared.
 app.use(compression());
 
-app.use("/api/v3/user");
+app.use("/api/v3/user", userRouter);
 module.exports = app;
