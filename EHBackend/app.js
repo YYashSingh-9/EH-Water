@@ -38,5 +38,5 @@ app.use("/api", limiter);
 // 5.Compressing the data shared -> this middleware compresses the data(JSON,BSON,Files,Images) shared.
 app.use(compression());
 
-app.use("/api/v3/issuethreads");
+app.use("/api/v3/user");
 module.exports = app;
