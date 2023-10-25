@@ -1,4 +1,6 @@
 const UserModel = require("../Models/UserModel");
+const IssueModel = require("../Models/IssueThreadModel");
+const ReviewModel = require("../Models/ReviewsModal");
 const AppError = require("../Utils/AppError");
 const DefaultController = require("./DefaultController");
 const CatchAsync = require("../Utils/CatchAsync");
@@ -35,3 +37,15 @@ exports.updateMe = CatchAsync(async (req, res, next) => {
   });
 });
 exports.getOneUser = DefaultController.DefaultGetOne(UserModel);
+
+exports.getAllUserPosts = CatchAsync(async (req, res, next) => {
+  const userId = req.user._id;
+  const doc = await IssueModel.find({ userId: { $in: userId } });
+  const doc2 = await ReviewModel.find({ userId: { $in: userId } });
+  const docToSend = [...doc, ...doc2];
+
+  res.status(200).json({
+    status: "success",
+    data: docToSend,
+  });
+});
