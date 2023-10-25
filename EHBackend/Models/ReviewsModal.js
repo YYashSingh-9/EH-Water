@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const ReviewSchema = mongoose.Schema({
   details: {
     type: String,
-    required: [true, "Issue details are necessary"],
+    required: [true, "Review details are necessary"],
   },
   userId: mongoose.Schema.ObjectId,
   issueId: mongoose.Schema.ObjectId,
