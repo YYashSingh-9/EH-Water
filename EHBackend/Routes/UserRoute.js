@@ -10,4 +10,6 @@ userRouter
   .route("/update-password")
   .patch(AuthController.getId, AuthController.updateMyPassword);
 userRouter.route("/updateMe").patch(UserController.updateMe);
+userRouter.route("/me").get(AuthController.getId, UserController.getOneUser);
+userRouter.route("/logout").get(AuthController.logoutUser);
 module.exports = userRouter;

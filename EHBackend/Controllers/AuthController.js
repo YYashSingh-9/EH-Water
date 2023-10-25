@@ -103,6 +103,17 @@ exports.updateMyPassword = CatchAsync(async (req, res, next) => {
   createAndSendCookie(user, 200, res);
 });
 
+exports.logoutUser = (req, res, next) => {
+  console.log("this worked");
+  res.cookie("jwt", "logout", {
+    expiresIn: new Date(Date.now() + 2 * 1000),
+    httpOnly: true,
+  });
+  res.status(200).json({
+    status: "Success",
+  });
+};
+
 exports.getId = (req, res, next) => {
   req.params.id = req.user._id;
   next();
