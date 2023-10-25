@@ -1,19 +1,19 @@
 const mongoose = require("mongoose");
 
 const IssueSchema = mongoose.Schema({
-  Title: {
+  title: {
     type: String,
     required: [true, "Your issue must have a title"],
   },
-  State: {
+  state: {
     type: String,
     required: [true, "Please provide state."],
   },
-  City: {
+  city: {
     type: String,
     required: [true, "Please provide your city name."],
   },
-  Details: {
+  details: {
     type: String,
     required: [true, "Issue details are necessary"],
   },

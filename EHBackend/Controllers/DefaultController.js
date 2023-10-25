@@ -34,6 +34,7 @@ exports.DefaultUpdateOne = (model) =>
 // Creating a Document.
 exports.DefaultCreateOne = (model) =>
   CatchAsync(async (req, res, next) => {
+    console.log("⚪⚪⚪⚪");
     const isBodyAnArray = Array.isArray(req.body);
     let doc;
     if (isBodyAnArray) {

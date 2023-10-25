@@ -54,6 +54,7 @@ exports.loginUser = CatchAsync(async (req, res, next) => {
 });
 
 exports.protect = CatchAsync(async (req, res, next) => {
+  console.log("💛💛💛this is protect");
   let token;
   if (
     req.headers.authorization &&

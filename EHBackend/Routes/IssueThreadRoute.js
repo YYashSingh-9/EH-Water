@@ -1,7 +1,7 @@
 const express = require("express");
-const issueThreadRouter = express.Router();
 const IssueThreadController = require("../Controllers/IssueThreadController");
 const AuthController = require("../Controllers/AuthController");
+const issueThreadRouter = express.Router();
 
 issueThreadRouter.use(AuthController.protect);
 

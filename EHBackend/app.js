@@ -3,6 +3,7 @@ const cookieParser = require("cookie-parser");
 const compression = require("compression");
 const cors = require("cors");
 const mongoSanitize = require("express-mongo-sanitize");
+const IssueThreadRouter = require("./Routes/IssueThreadRoute");
 const userRouter = require("./Routes/UserRoute");
 const ErrorController = require("./Controllers/ErrorController");
 const rateLimit = require("express-rate-limit");
@@ -43,6 +44,7 @@ app.use("/api", limiter);
 app.use(compression());
 
 app.use("/api/v3/user", userRouter);
-
+app.use("/api/v3/issues", IssueThreadRouter);
 app.use(ErrorController);
+
 module.exports = app;
