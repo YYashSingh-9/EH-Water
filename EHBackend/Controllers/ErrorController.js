@@ -28,7 +28,6 @@ const handleJWTExpiredError = () => {
 // ERRORS FOR DEVELOPMENT MODE->FOR DEVELOPER
 const developmentError = (err, req, res) => {
   //1.API
-  console.log(err);
   if (req.originalUrl.startsWith("/api")) {
     res.status(err.statusCode).json({
       err,
@@ -61,7 +60,6 @@ const productionError = (err, req, res) => {
 
 module.exports = (err, req, res, next) => {
   let errs = JSON.parse(JSON.stringify(err));
-  console.log(process.env.NODE_ENV);
   err.message = err.message || "message";
   err.statusCode = err.statusCode || 500;
   if (process.env.NODE_ENV === "development") {
