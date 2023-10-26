@@ -2,10 +2,22 @@ import { Form, useActionData } from "react-router-dom";
 import classes from "./LoginPage.module.css";
 import { Grid, Box, Button } from "@mui/material";
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { sliceActions } from "../../Store/StoreSlice";
+import { useEffect } from "react";
 
 const LoginPage = () => {
+  const dispatch = useDispatch();
   const Navigate = useNavigate();
   const action_data = useActionData();
+
+  useEffect(() => {
+    if (action_data) {
+      if (action_data.status === "success") {
+        dispatch(sliceActions.set_token_to_localStorage(action_data.data));
+      }
+    }
+  }, [action_data]);
   console.log(action_data);
   return (
     <>

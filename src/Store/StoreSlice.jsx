@@ -1,27 +1,34 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const InitialState = {
-  LoginEmailInput: "",
-  LoginPasswordInput: "",
-  EditNameInput: "",
-  EditEmailInput: "",
-  EditPasswordInput: "",
-  EditPasswordConfirmInput: "",
-  SignUpNameInput: "",
-  SignUpEmailInput: "",
-  SignUpPasswordInput: "",
-  SignUpPasswordConfirmInput: "",
+  loginState: false,
+  currentUserObject: {},
+  currentUserId: "",
+  cookieTokenVal: "",
 };
 
 const FirstSlice = createSlice({
   name: "FirstSlice",
   initialState: InitialState,
   reducers: {
-    editValuesSet(state, action) {
-      const vals = action.payload;
-      state.EditEmailInput = vals.emailInput;
-      state.EditNameInput = vals.nameInput;
-      console.log(state.EditEmailInput, state.EditNameInput);
+    set_token_to_localStorage(state, action) {
+      const actionObj = action.payload;
+      localStorage.clear();
+      localStorage.setItem("user_data", JSON.stringify(actionObj));
+      const user_data = JSON.parse(localStorage.getItem("user_data"));
+      state.currentUserObject = user_data.data;
+      state.currentUserId = user_data.data._id;
+      state.cookieTokenVal = user_data.token;
+    },
+    get_token_from_localStorage(state, action) {
+      const cookieToken = JSON.parse(localStorage.getItem("user_data"));
+      if (!cookieToken || cookieToken.token.length < 2) {
+        return;
+      } else if (cookieToken.token && cookieToken.token.length > 5) {
+        state.cookieTokenVal = cookieToken.token;
+        state.currentUserObject = cookieToken.data;
+        state.loginState = true;
+      }
     },
   },
 });
