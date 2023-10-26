@@ -4,25 +4,13 @@ import { Box, Button, Grid } from "@mui/material";
 import { useSelector, useDispatch } from "react-redux";
 import { sliceActions } from "../../Store/StoreSlice";
 import { useRef } from "react";
+import { useQuery } from "@tanstack/react-query";
 
 const EditAccount = () => {
   const emailInput = useSelector((state) => state.firstSlice.EditEmailInput);
   const nameInput = useSelector((state) => state.firstSlice.EditNameInput);
   const dispatch = useDispatch();
-  const emailref = useRef();
-  const nameref = useRef();
-  const emaiSubmitHandler = () => {
-    const nameVal = nameref.current.value;
-    const emailVal = emailref.current.value;
 
-    dispatch(
-      sliceActions.editValuesSet({
-        emailInput: emailVal,
-        nameInput: nameVal,
-      })
-    );
-    console.log(nameInput, emailInput);
-  };
   return (
     <>
       <Box className={classes.mainEditPage}>
@@ -42,27 +30,13 @@ const EditAccount = () => {
               <Form>
                 <label htmlFor="name">User Name</label>
                 <br />
-                <input
-                  type="string"
-                  id="name"
-                  defaultValue={nameInput}
-                  ref={emailref}
-                />
+                <input type="string" id="name" defaultValue={nameInput} />
                 <br />
                 <label htmlFor="email">User Email</label>
                 <br />
-                <input
-                  type="email"
-                  id="email"
-                  defaultValue={emailInput}
-                  ref={nameref}
-                />
+                <input type="email" id="email" defaultValue={emailInput} />
                 <br />
-                <Button
-                  type="submit"
-                  variant="outlined"
-                  onClick={emaiSubmitHandler}
-                >
+                <Button type="submit" variant="outlined">
                   Change Now
                 </Button>
               </Form>

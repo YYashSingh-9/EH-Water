@@ -81,6 +81,25 @@ export const userRequestsHandler = async ({ request }) => {
     const doc = await dataSendRequest("user", "signup", "POST", docToSend);
     return doc;
   }
+  if (intent.length > 10) {
+    dataToSend = { ...doc2 };
+    const returned_val =
+      dataToSend.name &&
+      (await dataSendRequest("user", "updateMe", "PATCH", dataToSend, intent));
+
+    const returned_val_PW =
+      dataToSend.password &&
+      (await dataSendRequest(
+        "user",
+        "update-password",
+        "PATCH",
+        dataToSend,
+        intent
+      ));
+
+    const finalVal = returned_val ? returned_val : returned_val_PW;
+    return finalVal;
+  }
 };
 export const LogoutHandler = async (cookie) => {
   const doc = await dataSendRequest("user", "logout", "POST", "", cookie);

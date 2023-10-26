@@ -5,6 +5,8 @@ const InitialState = {
   currentUserObject: {},
   currentUserId: "",
   cookieTokenVal: "",
+  EditEmailInput: "",
+  EditNameInput: "",
 };
 
 const FirstSlice = createSlice({
@@ -28,6 +30,8 @@ const FirstSlice = createSlice({
         state.cookieTokenVal = cookieToken.token;
         state.currentUserObject = cookieToken.data;
         state.loginState = true;
+        (state.EditEmailInput = state.currentUserObject.email),
+          (state.EditNameInput = state.currentUserObject.name);
       }
     },
     update_token_from_localStorage(state, action) {
