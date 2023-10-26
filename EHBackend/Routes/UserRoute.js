@@ -11,6 +11,6 @@ userRouter
   .patch(AuthController.getId, AuthController.updateMyPassword);
 userRouter.route("/updateMe").patch(UserController.updateMe);
 userRouter.route("/me").get(AuthController.getId, UserController.getOneUser);
-userRouter.route("/logout").get(AuthController.logoutUser);
+userRouter.route("/logout").post(AuthController.logoutUser);
 userRouter.route("/getMyposts").get(UserController.getAllUserPosts);
 module.exports = userRouter;

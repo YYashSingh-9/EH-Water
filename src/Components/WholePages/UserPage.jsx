@@ -1,17 +1,33 @@
-import ProfileThreadComponent from "../ChildComponents/ProfileThreadComponent";
-import { useDispatch, useSelector } from "react-redux";
+import { useMutation, useQuery } from "@tanstack/react-query";
+import { useEffect } from "react";
 import { sliceActions } from "../../Store/StoreSlice";
+import { LogoutHandler } from "../../Store/AsyncFuntions";
+import { Box, Grid, Button } from "@mui/material";
+import { useDispatch, useSelector } from "react-redux";
+import { useActionData, useNavigate } from "react-router-dom";
+import ProfileThreadComponent from "../ChildComponents/ProfileThreadComponent";
 import LogoutIcon from "@mui/icons-material/Logout";
 import LoginPage from "../AccountPages/LoginPage";
-import { Box, Grid, Button } from "@mui/material";
 import EditIcon from "@mui/icons-material/Edit";
-import { useActionData, useNavigate } from "react-router-dom";
 import classes from "./User.module.css";
-import { useEffect } from "react";
 
 const WhenLoggedIn = () => {
+  const cookieTokenVal = useSelector(
+    (state) => state.firstSlice.cookieTokenVal
+  );
+  const dispatch = useDispatch();
   const Navigate = useNavigate();
 
+  const { mutate } = useMutation({
+    mutationFn: () => {
+      dispatch(sliceActions.logout_cookie_remover());
+      return LogoutHandler(cookieTokenVal);
+    },
+  });
+
+  const logoutFunction = () => {
+    mutate();
+  };
   return (
     <>
       <Box className={classes.mainUserDiv}>
@@ -29,7 +45,11 @@ const WhenLoggedIn = () => {
                 <h4>Issues/Solutions</h4>
               </Box>
               <Box className={classes.btnSection}>
-                <Button variant="outlined" endIcon={<LogoutIcon />}>
+                <Button
+                  variant="outlined"
+                  endIcon={<LogoutIcon />}
+                  onClick={logoutFunction}
+                >
                   Logout
                 </Button>
                 <Button

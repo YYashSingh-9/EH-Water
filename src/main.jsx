@@ -8,7 +8,6 @@ import ProblemForm from "./Components/OutletComponents/ProblemForm";
 import WorldIssuesComponent from "./Components/OutletComponents/WorldIssuesComponent";
 import IssueThreadDetail_Page from "./Components/WholePages/IssueThreadDetail";
 import UserPage from "./Components/WholePages/UserPage";
-import LoginPage from "./Components/AccountPages/LoginPage";
 import SignupUser from "./Components/AccountPages/SignupUser";
 import EditAccount from "./Components/AccountPages/EditAccount";
 import { userRequestsHandler } from "./Store/AsyncFuntions";
@@ -27,7 +26,6 @@ const router = createBrowserRouter([
         element: <UserPage />,
         action: userRequestsHandler,
       },
-
       { path: "/signup", element: <SignupUser />, action: userRequestsHandler },
       { path: "/user-details/edit-user", element: <EditAccount /> },
     ],
