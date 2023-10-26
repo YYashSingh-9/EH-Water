@@ -11,6 +11,7 @@ import UserPage from "./Components/WholePages/UserPage";
 import LoginPage from "./Components/AccountPages/LoginPage";
 import SignupUser from "./Components/AccountPages/SignupUser";
 import EditAccount from "./Components/AccountPages/EditAccount";
+import { userRequestsHandler } from "./Store/AsyncFuntions";
 import "./index.css";
 
 const router = createBrowserRouter([
@@ -22,7 +23,7 @@ const router = createBrowserRouter([
       { path: "/issues", element: <WorldIssuesComponent /> },
       { path: "/issues/issue-details", element: <IssueThreadDetail_Page /> },
       { path: "/user-details", element: <UserPage /> },
-      { path: "/login", element: <LoginPage /> },
+      { path: "/login", element: <LoginPage />, action: userRequestsHandler },
       { path: "/signup", element: <SignupUser /> },
       { path: "/user-details/edit-user", element: <EditAccount /> },
     ],

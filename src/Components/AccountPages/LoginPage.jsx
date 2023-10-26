@@ -1,10 +1,12 @@
-import { Form } from "react-router-dom";
+import { Form, useActionData } from "react-router-dom";
 import classes from "./LoginPage.module.css";
 import { Grid, Box, Button } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 
 const LoginPage = () => {
   const Navigate = useNavigate();
+  const action_data = useActionData();
+  console.log(action_data);
   return (
     <>
       <Box className={classes.loginBox}>
@@ -22,16 +24,26 @@ const LoginPage = () => {
           </Grid>
           <Grid item lg={12} md={12} sm={12}>
             <Box className={classes.loginForm}>
-              <Form>
+              <Form method="POST" action="/login">
                 <label htmlFor="email">User Email</label>
                 <br />
-                <input type="email" id="email" placeholder="@example.com" />
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="@example.com"
+                />
                 <br />
                 <label htmlFor="password">User Password</label>
                 <br />
-                <input type="password" id="password" />
+                <input type="password" id="password" name="password" />
                 <br />
-                <Button type="submit" variant="outlined">
+                <Button
+                  type="submit"
+                  variant="outlined"
+                  name="intent"
+                  value="login"
+                >
                   Login
                 </Button>
               </Form>
