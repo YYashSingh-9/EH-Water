@@ -82,7 +82,8 @@ export const userRequestsHandler = async ({ request }) => {
     return doc;
   }
 };
-export const LogoutHandler = (cookie) => {
-  const doc = dataSendRequest("user", "logout", "POST", "", cookie);
+export const LogoutHandler = async (cookie) => {
+  const doc = await dataSendRequest("user", "logout", "POST", "", cookie);
+  console.log(doc);
   return doc;
 };

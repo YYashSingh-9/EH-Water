@@ -15,6 +15,9 @@ const WhenLoggedIn = () => {
   const cookieTokenVal = useSelector(
     (state) => state.firstSlice.cookieTokenVal
   );
+  const currentUser = useSelector(
+    (state) => state.firstSlice.currentUserObject
+  );
   const dispatch = useDispatch();
   const Navigate = useNavigate();
 
@@ -24,7 +27,9 @@ const WhenLoggedIn = () => {
       return LogoutHandler(cookieTokenVal);
     },
   });
-
+  const userName = currentUser.name;
+  const atName = currentUser.name.toString().toLowerCase();
+  console.log(userName, atName);
   const logoutFunction = () => {
     mutate();
   };
@@ -40,8 +45,8 @@ const WhenLoggedIn = () => {
           <Grid item lg={12} md={12} sm={12} xs={12}>
             <Box className={classes.nameDiv}>
               <Box>
-                <h2>Profile of Yash</h2>
-                <h3>@yash</h3>
+                <h2>Profile of {userName}</h2>
+                <h3>@{atName}</h3>
                 <h4>Issues/Solutions</h4>
               </Box>
               <Box className={classes.btnSection}>
