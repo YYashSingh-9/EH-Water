@@ -14,11 +14,11 @@ const SignupUser = () => {
   useEffect(() => {
     if (action_data) {
       if (action_data.status === "success") {
-        dispatch(sliceActions.set_token_to_localStorage());
-        redirect("/user-details");
+        dispatch(sliceActions.set_token_to_localStorage(action_data));
+        Navigate("/user-details");
       }
     }
-  }, []);
+  }, [action_data]);
   return (
     <>
       <Box className={classes.loginBox}>

@@ -28,11 +28,7 @@ const SignUpForm = () => {
         <br />
         <label htmlFor="confirmpassword">Confirm Password</label>
         <br />
-        <input
-          type="confirmpassword"
-          name="confirmpassword"
-          id="confirmpassword"
-        />
+        <input type="password" name="confirmpassword" id="confirmpassword" />
         <br />
         <Button type="submit" variant="outlined" name="intent" value="signup">
           SignUp
