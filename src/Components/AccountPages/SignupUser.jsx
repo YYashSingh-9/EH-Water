@@ -1,10 +1,24 @@
 import classes from "./SignupUser.module.css";
 import SignUpForm from "../ChildComponents/SignupForm";
 import { Grid, Box } from "@mui/material";
-import { useNavigate } from "react-router-dom";
+import { redirect, useActionData, useNavigate } from "react-router-dom";
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { sliceActions } from "../../Store/StoreSlice";
 
 const SignupUser = () => {
   const Navigate = useNavigate();
+  const action_data = useActionData();
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    if (action_data) {
+      if (action_data.status === "success") {
+        dispatch(sliceActions.set_token_to_localStorage());
+        redirect("/user-details");
+      }
+    }
+  }, []);
   return (
     <>
       <Box className={classes.loginBox}>

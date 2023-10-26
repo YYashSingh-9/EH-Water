@@ -1,11 +1,9 @@
-import classes from "./SignupForm.module.css";
 import { Form } from "react-router-dom";
 import { Button } from "@mui/material";
-
 const SignUpForm = () => {
   return (
     <>
-      <Form>
+      <Form method="POST">
         <label htmlFor="name">User Name</label>
         <br />
         <input
@@ -36,7 +34,7 @@ const SignUpForm = () => {
           id="confirmpassword"
         />
         <br />
-        <Button type="submit" variant="outlined">
+        <Button type="submit" variant="outlined" name="intent" value="signup">
           SignUp
         </Button>
       </Form>

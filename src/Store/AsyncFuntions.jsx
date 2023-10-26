@@ -70,4 +70,15 @@ export const userRequestsHandler = async ({ request }) => {
     const doc = await dataSendRequest("user", "login", "POST", docToSend);
     return doc;
   }
+  if (intent === "signup") {
+    console.log(doc2);
+    docToSend = {
+      name: doc2.name,
+      email: doc2.email,
+      password: doc2.password,
+      passwordConfirm: doc2.confirmpassword,
+    };
+    const doc = await dataSendRequest("user", "signup", "POST", docToSend);
+    return doc;
+  }
 };
