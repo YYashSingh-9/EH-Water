@@ -1,16 +1,23 @@
-import { Form } from "react-router-dom";
+import { Form, useActionData } from "react-router-dom";
 import classes from "./EditAccount.module.css";
 import { Box, Button, Grid } from "@mui/material";
 import { useSelector, useDispatch } from "react-redux";
 import { sliceActions } from "../../Store/StoreSlice";
-import { useRef } from "react";
-import { useQuery } from "@tanstack/react-query";
+import { useEffect } from "react";
 
 const EditAccount = () => {
   const emailInput = useSelector((state) => state.firstSlice.EditEmailInput);
   const nameInput = useSelector((state) => state.firstSlice.EditNameInput);
+  const cookieToken = useSelector((state) => state.firstSlice.cookieTokenVal);
   const dispatch = useDispatch();
+  const action_data = useActionData();
 
+  useEffect(() => {
+    if (action_data) {
+      if (!action_data.token && action_data.data) {
+      }
+    }
+  });
   return (
     <>
       <Box className={classes.mainEditPage}>
@@ -36,7 +43,12 @@ const EditAccount = () => {
                 <br />
                 <input type="email" id="email" defaultValue={emailInput} />
                 <br />
-                <Button type="submit" variant="outlined">
+                <Button
+                  type="submit"
+                  variant="outlined"
+                  name="intent"
+                  value={cookieToken}
+                >
                   Change Now
                 </Button>
               </Form>

@@ -40,6 +40,8 @@ const FirstSlice = createSlice({
       oldData.data = newData;
       localStorage.setItem("user_data", JSON.stringify(oldData));
       state.currentUserObject = oldData.data;
+      (state.EditEmailInput = state.currentUserObject.email),
+        (state.EditNameInput = state.currentUserObject.name);
     },
     logout_cookie_remover(state, action) {
       localStorage.clear();
