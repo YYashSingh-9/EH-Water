@@ -27,7 +27,7 @@ const router = createBrowserRouter([
         element: <UserPage />,
         action: userRequestsHandler,
       },
-      // { path: "/login", element: <LoginPage />, action: userRequestsHandler },
+
       { path: "/signup", element: <SignupUser /> },
       { path: "/user-details/edit-user", element: <EditAccount /> },
     ],

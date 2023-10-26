@@ -60,11 +60,12 @@ const UserPage = () => {
   const loggedInState = useSelector((state) => state.firstSlice.loginState);
   const dispatch = useDispatch();
   const action_data = useActionData();
+
   useEffect(() => {
     dispatch(sliceActions.get_token_from_localStorage());
     if (action_data) {
       if (action_data.status === "success") {
-        dispatch(sliceActions.set_token_to_localStorage(action_data.data));
+        dispatch(sliceActions.set_token_to_localStorage(action_data));
       }
     }
   }, [action_data]);
