@@ -64,6 +64,7 @@ const FirstSlice = createSlice({
     gettingAllIssues(state, action) {
       const allIssues = action.payload;
       state.allIssues = allIssues;
+      console.log(state.allIssues);
     },
   },
 });

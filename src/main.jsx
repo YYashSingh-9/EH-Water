@@ -28,7 +28,10 @@ const router = createBrowserRouter([
         element: <WorldIssuesComponent />,
         loader: GetAllIssue,
       },
-      { path: "/issues/issue-details", element: <IssueThreadDetail_Page /> },
+      {
+        path: "/issues/issue-details/:id",
+        element: <IssueThreadDetail_Page />,
+      },
       {
         path: "/user-details",
         element: <UserPage />,
