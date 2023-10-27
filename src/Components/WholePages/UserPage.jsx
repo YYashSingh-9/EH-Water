@@ -27,9 +27,12 @@ const WhenLoggedIn = () => {
       return LogoutHandler(cookieTokenVal);
     },
   });
-  const userName = currentUser.name;
-  const atName = currentUser.name.toString().toLowerCase();
-  console.log(userName, atName);
+  // const userName = currentUser.name;
+  // const atName = currentUser.name.toString().toLowerCase();
+  const userName = "yash";
+  const atName = "aysv";
+
+  // console.log(userName, atName);
   const logoutFunction = () => {
     mutate();
   };

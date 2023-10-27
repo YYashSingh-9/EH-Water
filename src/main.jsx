@@ -27,7 +27,11 @@ const router = createBrowserRouter([
         action: userRequestsHandler,
       },
       { path: "/signup", element: <SignupUser />, action: userRequestsHandler },
-      { path: "/user-details/edit-user", element: <EditAccount /> },
+      {
+        path: "/user-details/edit-user",
+        element: <EditAccount />,
+        action: userRequestsHandler,
+      },
     ],
   },
 ]);

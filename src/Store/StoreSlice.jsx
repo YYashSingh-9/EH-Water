@@ -37,6 +37,11 @@ const FirstSlice = createSlice({
     update_token_from_localStorage(state, action) {
       const newData = action.payload;
       const oldData = JSON.parse(localStorage.getItem("user_data"));
+      const data = {
+        data: newData,
+        status: newData.status,
+        token: oldData.token,
+      };
       oldData.data = newData;
       localStorage.setItem("user_data", JSON.stringify(oldData));
       state.currentUserObject = oldData.data;

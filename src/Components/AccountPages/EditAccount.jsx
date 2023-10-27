@@ -13,8 +13,15 @@ const EditAccount = () => {
   const action_data = useActionData();
 
   useEffect(() => {
+    console.log(emailInput, nameInput);
     if (action_data) {
       if (!action_data.token && action_data.data) {
+        const obj = {
+          data: action_data.data.data,
+          status: action_data.status,
+        };
+        console.log(action_data);
+        dispatch(sliceActions.update_token_from_localStorage(obj));
       }
     }
   });
@@ -34,14 +41,24 @@ const EditAccount = () => {
           </Grid>
           <Grid item lg={12} md={12} sm={12}>
             <Box className={classes.editForm}>
-              <Form>
+              <Form method="POST" action="/user-details">
                 <label htmlFor="name">User Name</label>
                 <br />
-                <input type="string" id="name" defaultValue={nameInput} />
+                <input
+                  type="string"
+                  id="name"
+                  name="name"
+                  defaultValue={nameInput}
+                />
                 <br />
                 <label htmlFor="email">User Email</label>
                 <br />
-                <input type="email" id="email" defaultValue={emailInput} />
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  defaultValue={emailInput}
+                />
                 <br />
                 <Button
                   type="submit"

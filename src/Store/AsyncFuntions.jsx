@@ -82,18 +82,19 @@ export const userRequestsHandler = async ({ request }) => {
     return doc;
   }
   if (intent.length > 10) {
-    dataToSend = { ...doc2 };
+    docToSend = { ...doc2 };
+    console.log(docToSend);
     const returned_val =
-      dataToSend.name &&
-      (await dataSendRequest("user", "updateMe", "PATCH", dataToSend, intent));
+      docToSend.name &&
+      (await dataSendRequest("user", "updateMe", "PATCH", docToSend, intent));
 
     const returned_val_PW =
-      dataToSend.password &&
+      docToSend.password &&
       (await dataSendRequest(
         "user",
         "update-password",
         "PATCH",
-        dataToSend,
+        docToSend,
         intent
       ));
 
