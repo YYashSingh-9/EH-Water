@@ -10,6 +10,7 @@ const InitialState = {
   titleInput: "",
   cityInput: "",
   issueDetails: "",
+  allIssues: [],
 };
 
 const FirstSlice = createSlice({
@@ -59,6 +60,10 @@ const FirstSlice = createSlice({
       state.titleInput = "";
       state.cityInput = "";
       state.issueDetails = "";
+    },
+    gettingAllIssues(state, action) {
+      const allIssues = action.payload;
+      state.allIssues = allIssues;
     },
   },
 });

@@ -120,5 +120,6 @@ export const postIssue = async ({ request }) => {
 
 export const GetAllIssue = async () => {
   const doc = await fetchFunction("issues", "", "");
+  console.log(doc);
   return doc;
 };

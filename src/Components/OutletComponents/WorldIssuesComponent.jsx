@@ -2,8 +2,22 @@ import { Grid, Box, Divider } from "@mui/material";
 import classes from "./WorldIssuesComponent.module.css";
 import SearchBar from "../ChildComponents/SearchBar";
 import IssueThreadComponent from "../ChildComponents/IssueThreadCompnent";
+import { useLoaderData } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { sliceActions } from "../../Store/StoreSlice";
+import { useEffect } from "react";
 
 const WorldIssuesComponent = () => {
+  const loaderData = useLoaderData();
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    if (loaderData) {
+      if (loaderData.status === "success") {
+        dispatch(sliceActions.gettingAllIssues(loaderData.data));
+      }
+    }
+  }, [loaderData]);
   return (
     <>
       <Box className={classes.issueCompParent}>
