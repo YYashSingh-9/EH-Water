@@ -6,6 +6,11 @@ const issueThreadRouter = express.Router();
 issueThreadRouter.route("/").get(IssueThreadController.getAllIssueThreads);
 issueThreadRouter.route("/:id").get(IssueThreadController.getOneIssueThread);
 issueThreadRouter.use(AuthController.protect);
-issueThreadRouter.route("/").post(IssueThreadController.createIssueThread);
+issueThreadRouter
+  .route("/")
+  .post(
+    IssueThreadController.issueModifier,
+    IssueThreadController.createIssueThread
+  );
 
 module.exports = issueThreadRouter;

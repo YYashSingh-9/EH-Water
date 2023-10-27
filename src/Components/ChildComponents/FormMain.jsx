@@ -1,7 +1,8 @@
 import classes from "./FormMain.module.css";
 import Button from "@mui/material/Button";
 import { Form } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { sliceActions } from "../../Store/StoreSlice";
 
 const FormMain = () => {
   const cookieTokenVal = useSelector(
@@ -13,6 +14,12 @@ const FormMain = () => {
   const titleInput = useSelector((state) => state.firstSlice.titleInput);
   const cityInput = useSelector((state) => state.firstSlice.cityInput);
   const issueDetails = useSelector((state) => state.issueDetails);
+  const dispatch = useDispatch();
+
+  const fieldClearHandle = () => {
+    dispatch(sliceActions.fieldClear());
+  };
+
   return (
     <>
       <Form className={classes.inputForm}>
@@ -94,6 +101,7 @@ const FormMain = () => {
           variant="contained"
           name="intent"
           value={cookieTokenVal}
+          onClick={fieldClearHandle}
         >
           Share Now
         </Button>
