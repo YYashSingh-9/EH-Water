@@ -58,6 +58,8 @@ const FirstSlice = createSlice({
       state.cookieTokenVal = "";
     },
     fieldClear(state, action) {
+      console.log("ran");
+
       state.titleInput = "";
       state.cityInput = "";
       state.issueDetails = "";

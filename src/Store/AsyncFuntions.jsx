@@ -113,7 +113,7 @@ export const postIssue = async ({ request }) => {
   const documents = await request.formData();
   const doc2 = Object.fromEntries(documents);
   const intent = documents.get("intent");
-  console.log(doc2, intent);
-  // const doc = await dataSendRequest("issues", "", "POST", doc2, intent);
-  return doc2;
+  const doc = await dataSendRequest("issues", "", "POST", doc2, intent);
+  console.log(doc);
+  return doc;
 };

@@ -8,18 +8,14 @@ const FormMain = () => {
   const cookieTokenVal = useSelector(
     (state) => state.firstSlice.cookieTokenVal
   );
-  const currentUser = useSelector(
-    (state) => state.firstSlice.currentUserObject
-  );
   const titleInput = useSelector((state) => state.firstSlice.titleInput);
   const cityInput = useSelector((state) => state.firstSlice.cityInput);
-  const issueDetails = useSelector((state) => state.issueDetails);
+  const issueDetails = useSelector((state) => state.firstSlice.issueDetails);
   const dispatch = useDispatch();
 
   const fieldClearHandle = () => {
     dispatch(sliceActions.fieldClear());
   };
-  console.log(cookieTokenVal);
   return (
     <>
       <Form method="POST" className={classes.inputForm}>

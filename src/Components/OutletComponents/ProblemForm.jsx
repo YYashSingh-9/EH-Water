@@ -5,17 +5,22 @@ import StarsIcon from "@mui/icons-material/Stars";
 import { ContributionModal } from "../WholePages/SolutionModal";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { Form, useActionData, useNavigate } from "react-router-dom";
 import { sliceActions } from "../../Store/StoreSlice";
 
 const ProblemForm = () => {
   const dispatch = useDispatch();
-  const cookieTokenVal = useSelector(
-    (state) => state.firstSlice.cookieTokenVal
-  );
+  const Navigate = useNavigate();
+  const actionData = useActionData();
 
   useEffect(() => {
     dispatch(sliceActions.get_token_from_localStorage());
-  }, [cookieTokenVal]);
+    if (actionData) {
+      if (actionData.status === "Success") {
+        Navigate("/issues");
+      }
+    }
+  }, [actionData]);
   return (
     <>
       <Box>
