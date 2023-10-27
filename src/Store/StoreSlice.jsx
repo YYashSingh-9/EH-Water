@@ -14,6 +14,7 @@ const FirstSlice = createSlice({
   initialState: InitialState,
   reducers: {
     set_token_to_localStorage(state, action) {
+      console.log("⚪⚪💛");
       const actionObj = action.payload;
       localStorage.clear();
       localStorage.setItem("user_data", JSON.stringify(actionObj));
@@ -24,6 +25,7 @@ const FirstSlice = createSlice({
     },
     get_token_from_localStorage(state, action) {
       const cookieToken = JSON.parse(localStorage.getItem("user_data"));
+      console.log(cookieToken);
       if (!cookieToken || cookieToken.token.length < 2) {
         return;
       } else if (cookieToken.token && cookieToken.token.length > 5) {
@@ -36,13 +38,13 @@ const FirstSlice = createSlice({
     },
     update_token_from_localStorage(state, action) {
       const newData = action.payload;
-      const oldData = JSON.parse(localStorage.getItem("user_data"));
+      let oldData = JSON.parse(localStorage.getItem("user_data"));
       const data = {
         data: newData,
-        status: newData.status,
         token: oldData.token,
       };
-      oldData.data = newData;
+      console.log(data);
+      oldData = data;
       localStorage.setItem("user_data", JSON.stringify(oldData));
       state.currentUserObject = oldData.data;
       (state.EditEmailInput = state.currentUserObject.email),

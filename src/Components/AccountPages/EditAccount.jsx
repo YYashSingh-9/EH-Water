@@ -1,4 +1,4 @@
-import { Form, useActionData } from "react-router-dom";
+import { Form, useActionData, useNavigate } from "react-router-dom";
 import classes from "./EditAccount.module.css";
 import { Box, Button, Grid } from "@mui/material";
 import { useSelector, useDispatch } from "react-redux";
@@ -11,17 +11,18 @@ const EditAccount = () => {
   const cookieToken = useSelector((state) => state.firstSlice.cookieTokenVal);
   const dispatch = useDispatch();
   const action_data = useActionData();
+  const navigate = useNavigate();
 
   useEffect(() => {
+    dispatch(sliceActions.get_token_from_localStorage());
     console.log(emailInput, nameInput);
     if (action_data) {
       if (!action_data.token && action_data.data) {
-        const obj = {
-          data: action_data.data.data,
-          status: action_data.status,
-        };
         console.log(action_data);
-        dispatch(sliceActions.update_token_from_localStorage(obj));
+        dispatch(sliceActions.update_token_from_localStorage(action_data.data));
+        navigate("/user-details");
+      } else if (action_data.token) {
+        dispatch(sliceActions(action_data));
       }
     }
   });
@@ -41,7 +42,7 @@ const EditAccount = () => {
           </Grid>
           <Grid item lg={12} md={12} sm={12}>
             <Box className={classes.editForm}>
-              <Form method="POST" action="/user-details">
+              <Form method="POST">
                 <label htmlFor="name">User Name</label>
                 <br />
                 <input
@@ -76,11 +77,15 @@ const EditAccount = () => {
               <Form>
                 <label htmlFor="passwordchange">New Password</label>
                 <br />
-                <input type="text" id="passwordchange" />
+                <input type="text" id="passwordchange" name="password" />
                 <br />
                 <label htmlFor="passwordconfirm">Confirm Password </label>
                 <br />
-                <input type="password" id="passwordconfirm" />
+                <input
+                  type="password"
+                  id="passwordconfirm"
+                  name="passwordCurrent"
+                />
                 <br />
                 <Button type="submit" variant="outlined">
                   Change Now
