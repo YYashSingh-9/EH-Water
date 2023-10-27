@@ -110,9 +110,10 @@ export const LogoutHandler = async (cookie) => {
 };
 
 export const postIssue = async ({ request }) => {
-  const documents = await request.getFormData();
+  const documents = await request.formData();
   const doc2 = Object.fromEntries(documents);
   const intent = documents.get("intent");
-
-  const doc = await dataSendRequest("issues", "", "POST", documents, intent);
+  console.log(doc2, intent);
+  // const doc = await dataSendRequest("issues", "", "POST", doc2, intent);
+  return doc2;
 };

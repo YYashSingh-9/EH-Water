@@ -3,8 +3,19 @@ import { Grid, Box } from "@mui/material";
 import FormMain from "../ChildComponents/FormMain";
 import StarsIcon from "@mui/icons-material/Stars";
 import { ContributionModal } from "../WholePages/SolutionModal";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { sliceActions } from "../../Store/StoreSlice";
 
 const ProblemForm = () => {
+  const dispatch = useDispatch();
+  const cookieTokenVal = useSelector(
+    (state) => state.firstSlice.cookieTokenVal
+  );
+
+  useEffect(() => {
+    dispatch(sliceActions.get_token_from_localStorage());
+  }, [cookieTokenVal]);
   return (
     <>
       <Box>

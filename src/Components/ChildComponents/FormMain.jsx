@@ -19,10 +19,10 @@ const FormMain = () => {
   const fieldClearHandle = () => {
     dispatch(sliceActions.fieldClear());
   };
-
+  console.log(cookieTokenVal);
   return (
     <>
-      <Form className={classes.inputForm}>
+      <Form method="POST" className={classes.inputForm}>
         <label htmlFor="issue_input">Title of your issue</label>
         <br />
         <input
