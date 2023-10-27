@@ -7,6 +7,9 @@ const InitialState = {
   cookieTokenVal: "",
   EditEmailInput: "",
   EditNameInput: "",
+  titleInput: "",
+  cityInput: "",
+  issueDetails: "",
 };
 
 const FirstSlice = createSlice({
@@ -14,7 +17,6 @@ const FirstSlice = createSlice({
   initialState: InitialState,
   reducers: {
     set_token_to_localStorage(state, action) {
-      console.log("⚪⚪💛");
       const actionObj = action.payload;
       localStorage.clear();
       localStorage.setItem("user_data", JSON.stringify(actionObj));
@@ -54,6 +56,11 @@ const FirstSlice = createSlice({
       localStorage.clear();
       state.loginState = false;
       state.cookieTokenVal = "";
+    },
+    fieldClear(state, action) {
+      state.titleInput = "";
+      state.cityInput = "";
+      state.issueDetails = "";
     },
   },
 });

@@ -17,12 +17,11 @@ const EditAccount = () => {
     dispatch(sliceActions.get_token_from_localStorage());
     if (action_data) {
       if (!action_data.token && action_data.data) {
-        console.log(action_data);
         dispatch(sliceActions.update_token_from_localStorage(action_data.data));
         navigate("/user-details");
       } else if (action_data.token) {
-        console.log(action_data);
         dispatch(sliceActions.set_token_to_localStorage(action_data));
+        navigate("/user-details");
       }
     }
   });

@@ -1,7 +1,18 @@
 import classes from "./FormMain.module.css";
 import Button from "@mui/material/Button";
 import { Form } from "react-router-dom";
+import { useSelector } from "react-redux";
+
 const FormMain = () => {
+  const cookieTokenVal = useSelector(
+    (state) => state.firstSlice.cookieTokenVal
+  );
+  const currentUser = useSelector(
+    (state) => state.firstSlice.currentUserObject
+  );
+  const titleInput = useSelector((state) => state.firstSlice.titleInput);
+  const cityInput = useSelector((state) => state.firstSlice.cityInput);
+  const issueDetails = useSelector((state) => state.issueDetails);
   return (
     <>
       <Form className={classes.inputForm}>
@@ -11,11 +22,13 @@ const FormMain = () => {
           type="text"
           placeholder="Is it water shortage?"
           id="issue_input"
+          name="title"
+          defaultValue={titleInput}
         />
         <br />
         <label htmlFor="state_selection">Where problem occured</label>
         <br />
-        <select id="state_selection" placeholder="select state">
+        <select id="state_selection" placeholder="select state" name="state">
           <option value="Andhra Pradesh">Andhra Pradesh</option>
           <option value="Arunachal Pradesh">Arunachal Pradesh</option>
           <option value="Assam">Assam</option>
@@ -59,16 +72,29 @@ const FormMain = () => {
         <br />
         <label htmlFor="city">Enter your city</label>
         <br />
-        <input type="text" id="city" placeholder="ex-Bilaspur" />
+        <input
+          type="text"
+          id="city"
+          placeholder="ex-Bilaspur"
+          name="city"
+          defaultValue={cityInput}
+        />
         <br />
         <label type="root_problem" />
         <br />
         <textarea
+          defaultValue={issueDetails}
+          name="details"
           id="root_problem"
           placeholder="Please explain issue in details and */ don't use foul language/abusive word or mocking."
         />
         <br />
-        <Button type="submit" variant="contained">
+        <Button
+          type="submit"
+          variant="contained"
+          name="intent"
+          value={cookieTokenVal}
+        >
           Share Now
         </Button>
       </Form>
