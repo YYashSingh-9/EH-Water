@@ -83,7 +83,7 @@ export const userRequestsHandler = async ({ request }) => {
   }
   if (intent.length > 10) {
     docToSend = { ...doc2 };
-    console.log(docToSend);
+
     const returned_val =
       docToSend.name &&
       (await dataSendRequest("user", "updateMe", "PATCH", docToSend, intent));
@@ -99,6 +99,7 @@ export const userRequestsHandler = async ({ request }) => {
       ));
 
     const finalVal = returned_val ? returned_val : returned_val_PW;
+
     return finalVal;
   }
 };

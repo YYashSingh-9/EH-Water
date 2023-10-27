@@ -15,14 +15,14 @@ const EditAccount = () => {
 
   useEffect(() => {
     dispatch(sliceActions.get_token_from_localStorage());
-    console.log(emailInput, nameInput);
     if (action_data) {
       if (!action_data.token && action_data.data) {
         console.log(action_data);
         dispatch(sliceActions.update_token_from_localStorage(action_data.data));
         navigate("/user-details");
       } else if (action_data.token) {
-        dispatch(sliceActions(action_data));
+        console.log(action_data);
+        dispatch(sliceActions.set_token_to_localStorage(action_data));
       }
     }
   });
@@ -42,7 +42,7 @@ const EditAccount = () => {
           </Grid>
           <Grid item lg={12} md={12} sm={12}>
             <Box className={classes.editForm}>
-              <Form method="POST">
+              <Form method="PATCH">
                 <label htmlFor="name">User Name</label>
                 <br />
                 <input
@@ -74,20 +74,25 @@ const EditAccount = () => {
           </Grid>
           <Grid item lg={12} md={12} sm={12}>
             <Box className={classes.pwForm}>
-              <Form>
+              <Form method="PATCH">
                 <label htmlFor="passwordchange">New Password</label>
                 <br />
                 <input type="text" id="passwordchange" name="password" />
                 <br />
-                <label htmlFor="passwordconfirm">Confirm Password </label>
+                <label htmlFor="passwordCurrent">Current Password </label>
                 <br />
                 <input
                   type="password"
-                  id="passwordconfirm"
+                  id="passwordCurrent"
                   name="passwordCurrent"
                 />
                 <br />
-                <Button type="submit" variant="outlined">
+                <Button
+                  type="submit"
+                  variant="outlined"
+                  name="intent"
+                  value={cookieToken}
+                >
                   Change Now
                 </Button>
               </Form>
