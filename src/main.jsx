@@ -10,7 +10,11 @@ import IssueThreadDetail_Page from "./Components/WholePages/IssueThreadDetail";
 import UserPage from "./Components/WholePages/UserPage";
 import SignupUser from "./Components/AccountPages/SignupUser";
 import EditAccount from "./Components/AccountPages/EditAccount";
-import { userRequestsHandler, postIssue } from "./Store/AsyncFuntions";
+import {
+  userRequestsHandler,
+  postIssue,
+  GetAllIssue,
+} from "./Store/AsyncFuntions";
 import "./index.css";
 
 const router = createBrowserRouter([
@@ -19,7 +23,11 @@ const router = createBrowserRouter([
     element: <ParentComponent />,
     children: [
       { path: "/", element: <ProblemForm />, action: postIssue },
-      { path: "/issues", element: <WorldIssuesComponent /> },
+      {
+        path: "/issues",
+        element: <WorldIssuesComponent />,
+        loader: GetAllIssue,
+      },
       { path: "/issues/issue-details", element: <IssueThreadDetail_Page /> },
       {
         path: "/user-details",

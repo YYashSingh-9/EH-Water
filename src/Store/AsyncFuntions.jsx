@@ -117,3 +117,8 @@ export const postIssue = async ({ request }) => {
   console.log(doc);
   return doc;
 };
+
+export const GetAllIssue = async () => {
+  const doc = await fetchFunction("issues", "", "");
+  return doc;
+};
