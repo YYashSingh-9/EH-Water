@@ -22,6 +22,13 @@ const WhenLoggedIn = () => {
   const dispatch = useDispatch();
   const Navigate = useNavigate();
 
+  const { data } = useQuery({
+    queryKey: ["all-posts"],
+    queryFn: () => {
+      return getAllUserPosts(cookieTokenVal);
+    },
+  });
+
   const { mutate } = useMutation({
     mutationFn: () => {
       dispatch(sliceActions.logout_cookie_remover());
@@ -34,6 +41,13 @@ const WhenLoggedIn = () => {
   const logoutFunction = () => {
     mutate();
   };
+  useEffect(() => {
+    if (data) {
+      if (data.status === "success") {
+        dispatch(sliceActions.gettingAllPosts(data.data));
+      }
+    }
+  }, [data]);
 
   return (
     <>
@@ -74,8 +88,9 @@ const WhenLoggedIn = () => {
           <Grid item lg={12} md={12} sm={12} xs={12}>
             {allPosts.length > 1 ? (
               <Box className={classes.solutionsDiv}>
-                <ProfileThreadComponent />
-                <ProfileThreadComponent />
+                {allPosts.map((el) => {
+                  return <ProfileThreadComponent elem={el} key={el._id} />;
+                })}
               </Box>
             ) : (
               <p>No posts yet</p>
@@ -89,26 +104,15 @@ const WhenLoggedIn = () => {
 
 const UserPage = () => {
   const loggedInState = useSelector((state) => state.firstSlice.loginState);
-  const cookieTokenVal = useSelector(
-    (state) => state.firstSlice.cookieTokenVal
-  );
+
   const dispatch = useDispatch();
   const action_data = useActionData();
-  const { data } = useQuery({
-    queryKey: ["all-posts"],
-    queryFn: () => {
-      return getAllUserPosts(cookieTokenVal);
-    },
-  });
 
   useEffect(() => {
     dispatch(sliceActions.get_token_from_localStorage());
-    if (action_data || data) {
+    if (action_data && data) {
       if (action_data.status === "success") {
         dispatch(sliceActions.set_token_to_localStorage(action_data));
-      }
-      if (data.status === "success") {
-        dispatch(sliceActions.gettingAllPosts(data.data));
       }
     }
   }, [action_data]);
