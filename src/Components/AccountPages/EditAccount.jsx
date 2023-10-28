@@ -1,9 +1,24 @@
-import { Form, useActionData, useNavigate } from "react-router-dom";
 import classes from "./EditAccount.module.css";
+import { Form, useActionData, useNavigate } from "react-router-dom";
 import { Box, Button, Grid } from "@mui/material";
 import { useSelector, useDispatch } from "react-redux";
 import { sliceActions } from "../../Store/StoreSlice";
 import { useEffect } from "react";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
+const notifyFn = () => {
+  return toast("Account Updated", {
+    position: "top-right",
+    autoClose: 2000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+    theme: "light",
+  });
+};
 
 const EditAccount = () => {
   const emailInput = useSelector((state) => state.firstSlice.EditEmailInput);
@@ -18,10 +33,16 @@ const EditAccount = () => {
     if (action_data) {
       if (!action_data.token && action_data.data) {
         dispatch(sliceActions.update_token_from_localStorage(action_data.data));
-        navigate("/user-details");
+        notifyFn();
+        setTimeout(() => {
+          navigate("/user-details");
+        }, 2600);
       } else if (action_data.token) {
         dispatch(sliceActions.set_token_to_localStorage(action_data));
-        navigate("/user-details");
+        notifyFn();
+        setTimeout(() => {
+          navigate("/user-details");
+        }, 2600);
       }
     }
   });
@@ -98,6 +119,7 @@ const EditAccount = () => {
             </Box>
           </Grid>
         </Grid>
+        <ToastContainer />
       </Box>
     </>
   );

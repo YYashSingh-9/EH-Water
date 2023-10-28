@@ -11,11 +11,15 @@ const FormMain = () => {
   const titleInput = useSelector((state) => state.firstSlice.titleInput);
   const cityInput = useSelector((state) => state.firstSlice.cityInput);
   const issueDetails = useSelector((state) => state.firstSlice.issueDetails);
+  const isLoggedIn = useSelector((state) => state.firstSlice.loginState);
   const dispatch = useDispatch();
 
   const fieldClearHandle = () => {
     dispatch(sliceActions.fieldClear());
   };
+
+  const disableState = !isLoggedIn ? true : false;
+  const buttonTitle = !isLoggedIn ? "Not logged In" : "Share";
   return (
     <>
       <Form method="POST" className={classes.inputForm}>
@@ -98,8 +102,9 @@ const FormMain = () => {
           name="intent"
           value={cookieTokenVal}
           onClick={fieldClearHandle}
+          disabled={disableState}
         >
-          Share Now
+          {buttonTitle}
         </Button>
       </Form>
     </>

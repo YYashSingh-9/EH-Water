@@ -9,6 +9,7 @@ const IssueThreadComponent = (props) => {
   const cookieTokenVal = useSelector(
     (state) => state.firstSlice.cookieTokenVal
   );
+  const isLoggedIn = useSelector((state) => state.firstSlice.loginState);
   const Navigate = useNavigate();
   const { city, details, state, title, _id } = props.elem;
   const userId = userObj._id;
@@ -48,12 +49,16 @@ const IssueThreadComponent = (props) => {
             </Grid>
             <Grid item lg={12} md={12} sm={12} xs={12}>
               <Box className={classes.btn}>
-                <SolutionModal
-                  issueId={_id}
-                  user={userId}
-                  userName={userName}
-                  cookie={cookieTokenVal}
-                />
+                {isLoggedIn ? (
+                  <SolutionModal
+                    issueId={_id}
+                    user={userId}
+                    userName={userName}
+                    cookie={cookieTokenVal}
+                  />
+                ) : (
+                  <h3>Please Login</h3>
+                )}
               </Box>
             </Grid>
           </Grid>

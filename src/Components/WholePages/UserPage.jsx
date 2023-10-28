@@ -5,11 +5,26 @@ import { LogoutHandler, getAllUserPosts } from "../../Store/AsyncFuntions";
 import { Box, Grid, Button } from "@mui/material";
 import { useDispatch, useSelector } from "react-redux";
 import { useActionData, useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import ProfileThreadComponent from "../ChildComponents/ProfileThreadComponent";
 import LogoutIcon from "@mui/icons-material/Logout";
 import LoginPage from "../AccountPages/LoginPage";
 import EditIcon from "@mui/icons-material/Edit";
 import classes from "./User.module.css";
+
+const notifyFn = () => {
+  return toast("You are now logged in", {
+    position: "top-right",
+    autoClose: 2000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+    theme: "light",
+  });
+};
 
 const WhenLoggedIn = () => {
   const cookieTokenVal = useSelector(
@@ -93,10 +108,11 @@ const WhenLoggedIn = () => {
                 })}
               </Box>
             ) : (
-              <p>No posts yet</p>
+              <h3 style={{ color: "black" }}>No Posts Yet...</h3>
             )}
           </Grid>
         </Grid>
+        <ToastContainer />
       </Box>
     </>
   );
@@ -113,6 +129,7 @@ const UserPage = () => {
     if (action_data) {
       if (action_data.status === "success") {
         dispatch(sliceActions.set_token_to_localStorage(action_data));
+        notifyFn();
       }
     }
   }, [action_data]);
