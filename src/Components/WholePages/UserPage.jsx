@@ -30,7 +30,6 @@ const WhenLoggedIn = () => {
   const userName = currentUser.name;
   const atName = currentUser.name.toString().toLowerCase();
 
-  // console.log(userName, atName);
   const logoutFunction = () => {
     mutate();
   };
@@ -91,7 +90,6 @@ const UserPage = () => {
     dispatch(sliceActions.get_token_from_localStorage());
     if (action_data) {
       if (action_data.status === "success") {
-        console.log("tis run");
         dispatch(sliceActions.set_token_to_localStorage(action_data));
       }
     }

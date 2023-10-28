@@ -128,6 +128,11 @@ export const postSolution = async (data, cookie) => {
 };
 export const getIssueSolutions = async (Id) => {
   const doc = await fetchFunction("reviews", "", Id);
+  return doc;
+};
+
+export const getAllUserPosts = async (cookie) => {
+  const doc = await fetchFunction("reviews", cookie, "getMyposts");
   console.log(doc);
   return doc;
 };
