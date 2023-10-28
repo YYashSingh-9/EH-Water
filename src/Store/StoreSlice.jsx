@@ -12,6 +12,7 @@ const InitialState = {
   issueDetails: "",
   allIssues: [],
   allReviews: [],
+  searchTerm: "",
 };
 
 const FirstSlice = createSlice({
@@ -70,6 +71,14 @@ const FirstSlice = createSlice({
     gettingAllIssueReview(state, action) {
       const reviews = action.payload;
       state.allReviews = reviews;
+    },
+    SearchBarTerm(state, action) {
+      let searchTerm = action.payload; //getting the searched string value
+      let searchTerm_uppercase = searchTerm.charAt(0).toUpperCase(); //taking out first element(letter) , converting to uppercase
+      let searchTerm_rest = searchTerm.slice(1); //taking out rest of string without first element(letter)
+      const finalSearchTerm = searchTerm_uppercase.concat(searchTerm_rest); // making it a whole search elem with first letter as capital
+      // const finalSearchTerm = searchTerm.toCapitalize();
+      state.searchTerm = finalSearchTerm;
     },
   },
 });

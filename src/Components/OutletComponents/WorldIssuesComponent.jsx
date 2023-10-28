@@ -9,6 +9,8 @@ import { useEffect } from "react";
 
 const WorldIssuesComponent = () => {
   const allIssuesArray = useSelector((state) => state.firstSlice.allIssues);
+  const searchTerm = useSelector((state) => state.firstSlice.searchTerm);
+
   const loaderData = useLoaderData();
   const dispatch = useDispatch();
   useEffect(() => {
@@ -19,6 +21,17 @@ const WorldIssuesComponent = () => {
       }
     }
   }, [loaderData]);
+
+  let searchedArray = allIssuesArray;
+  if (searchTerm) {
+    searchedArray = allIssuesArray.filter((el) =>
+      el.title.includes(searchTerm)
+    );
+  }
+  console.log(searchedArray);
+  console.log(searchTerm);
+  // const finalArray = searchedArray.length > 1 ? searchedArray : allIssuesArray;
+  // console.log(finalArray);
   return (
     <>
       <Box className={classes.issueCompParent}>
@@ -35,7 +48,7 @@ const WorldIssuesComponent = () => {
           </Grid>
           <Grid item lg={12} md={12} sm={12} xs={12} textAlign={"center"}>
             <Box className={classes.issueParent}>
-              {allIssuesArray.map((el) => {
+              {searchedArray.map((el) => {
                 return <IssueThreadComponent elem={el} key={el._id} />;
               })}
             </Box>
