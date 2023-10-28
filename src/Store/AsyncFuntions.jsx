@@ -121,6 +121,9 @@ export const GetAllIssue = async () => {
   console.log(doc);
   return doc;
 };
-export const postSolution = async () => {
-  const doc = await dataSendRequest();
+export const postSolution = async (data, cookie) => {
+  console.log(data, cookie);
+  // const doc = await dataSendRequest("reviews", "", "POST",data,cookie);
+  // console.log(doc)
+  // return doc
 };

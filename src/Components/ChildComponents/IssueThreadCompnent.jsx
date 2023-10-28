@@ -5,12 +5,13 @@ import SolutionModal from "../WholePages/SolutionModal";
 import { useSelector } from "react-redux";
 
 const IssueThreadComponent = (props) => {
-  const userId = useSelector((state) => state.firstSlice.currentUserId);
+  const userObj = useSelector((state) => state.firstSlice.currentUserObject);
   const cookieTokenVal = useSelector(
     (state) => state.firstSlice.cookieTokenVal
   );
   const Navigate = useNavigate();
   const { city, details, state, title, _id } = props.elem;
+  const userId = userObj._id;
 
   const detailFinal = details.slice(0, 200);
   return (

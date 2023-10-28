@@ -12,6 +12,7 @@ const WorldIssuesComponent = () => {
   const loaderData = useLoaderData();
   const dispatch = useDispatch();
   useEffect(() => {
+    dispatch(sliceActions.get_token_from_localStorage());
     if (loaderData) {
       console.log(loaderData);
       if (loaderData.status === "success") {

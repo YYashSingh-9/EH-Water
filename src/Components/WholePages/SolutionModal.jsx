@@ -25,24 +25,25 @@ const SolutionModal = (props) => {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
-  const ref = React.useRef;
+  const ref = React.useRef();
   const issueId = props.issueId;
   const userId = props.user;
   const dataToSend = {
-    details: ref.current.value,
     userId,
     issueId,
   };
+
   const cookie = props.cookie;
   const { mutate } = useMutation({
-    mutationFn: () => {
+    mutationFn: (data) => {
       handleClose();
-      return postSolution(dataToSend, cookie);
+      return postSolution(data, cookie);
     },
   });
 
   const solutionPostHandler = () => {
-    mutate();
+    dataToSend.details = ref.current.value;
+    mutate(dataToSend);
   };
   return (
     <>
