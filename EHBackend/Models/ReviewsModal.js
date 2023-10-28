@@ -7,6 +7,7 @@ const ReviewSchema = mongoose.Schema({
   },
   userId: mongoose.Schema.ObjectId,
   issueId: mongoose.Schema.ObjectId,
+  userName: String,
 });
 
 const ReviewModal = mongoose.model("ReviewModal", ReviewSchema);

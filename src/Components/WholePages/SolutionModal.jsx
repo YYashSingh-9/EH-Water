@@ -28,9 +28,11 @@ const SolutionModal = (props) => {
   const ref = React.useRef();
   const issueId = props.issueId;
   const userId = props.user;
+  const userName = props.userName;
   const dataToSend = {
     userId,
     issueId,
+    userName,
   };
 
   const cookie = props.cookie;

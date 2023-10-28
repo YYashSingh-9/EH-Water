@@ -12,6 +12,7 @@ const IssueThreadComponent = (props) => {
   const Navigate = useNavigate();
   const { city, details, state, title, _id } = props.elem;
   const userId = userObj._id;
+  const userName = userObj.name;
 
   const detailFinal = details.slice(0, 200);
   return (
@@ -50,6 +51,7 @@ const IssueThreadComponent = (props) => {
                 <SolutionModal
                   issueId={_id}
                   user={userId}
+                  userName={userName}
                   cookie={cookieTokenVal}
                 />
               </Box>
