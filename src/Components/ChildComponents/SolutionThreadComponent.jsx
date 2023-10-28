@@ -1,6 +1,8 @@
 import classes from "./SolutionThreadComponent.module.css";
 import { Box, Container, Grid } from "@mui/material";
-const SolutionThreadComponent = () => {
+const SolutionThreadComponent = (props) => {
+  const { details, userId, issueId } = props.elem;
+
   return (
     <>
       <Container maxWidth="lg">
