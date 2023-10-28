@@ -22,6 +22,7 @@
 .issueParent {
   overflow-y: scroll;
   max-height: 50vh;
+  max-width: 100%;
   padding-bottom: 12rem;
   scroll-behavior: smooth;
 }

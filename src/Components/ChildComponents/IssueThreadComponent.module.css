@@ -22,9 +22,11 @@
 }
 .issueText p {
   font-size: 1.1rem;
+  text-transform: lowercase;
 }
 .issueText {
   border-top: 0.1rem solid #ececec;
+  max-width: 100%;
 }
 .btn button {
   font-size: 1.1rem;

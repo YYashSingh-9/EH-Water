@@ -5,6 +5,8 @@ import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Modal from "@mui/material/Modal";
 import PersonPinIcon from "@mui/icons-material/PersonPin";
+import { useMutation } from "@tanstack/react-query";
+import { postSolution } from "../../Store/AsyncFuntions";
 
 const style = {
   position: "absolute",
@@ -19,10 +21,29 @@ const style = {
   p: 4,
 };
 
-const SolutionModal = () => {
+const SolutionModal = (props) => {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
+  const ref = React.useRef;
+  const issueId = props.issueId;
+  const userId = props.user;
+  const dataToSend = {
+    details: ref.current.value,
+    userId,
+    issueId,
+  };
+  const cookie = props.cookie;
+  const { mutate } = useMutation({
+    mutationFn: () => {
+      handleClose();
+      return postSolution(dataToSend, cookie);
+    },
+  });
+
+  const solutionPostHandler = () => {
+    mutate();
+  };
   return (
     <>
       <div>
@@ -38,13 +59,14 @@ const SolutionModal = () => {
           <Box sx={style}>
             <Box className={classes.textModal}>
               <textarea
+                ref={ref}
                 className={classes.txtArea}
                 placeholder="ex- whatever solution feels right, share it here."
               />
               <Button
                 endIcon={<BorderColorIcon />}
                 variant="contained"
-                onClick={handleClose}
+                onClick={solutionPostHandler}
               >
                 Post
               </Button>

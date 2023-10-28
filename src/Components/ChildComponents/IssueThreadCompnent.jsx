@@ -2,8 +2,13 @@ import classes from "./IssueThreadComponent.module.css";
 import { Box, Container, Grid } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import SolutionModal from "../WholePages/SolutionModal";
+import { useSelector } from "react-redux";
 
 const IssueThreadComponent = (props) => {
+  const userId = useSelector((state) => state.firstSlice.currentUserId);
+  const cookieTokenVal = useSelector(
+    (state) => state.firstSlice.cookieTokenVal
+  );
   const Navigate = useNavigate();
   const { city, details, state, title, _id } = props.elem;
 
@@ -29,7 +34,7 @@ const IssueThreadComponent = (props) => {
                 <h4>{`${state},${city}`}</h4>
               </Box>
             </Grid>
-            <Grid item lg={12} md={12} sm={12} xs={12}>
+            <Grid item lg={12} md={6} sm={6} xs={6}>
               <Box
                 className={classes.issueText}
                 onClick={() => {
@@ -41,7 +46,11 @@ const IssueThreadComponent = (props) => {
             </Grid>
             <Grid item lg={12} md={12} sm={12} xs={12}>
               <Box className={classes.btn}>
-                <SolutionModal />
+                <SolutionModal
+                  issueId={_id}
+                  user={userId}
+                  cookie={cookieTokenVal}
+                />
               </Box>
             </Grid>
           </Grid>
