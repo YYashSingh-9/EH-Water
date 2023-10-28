@@ -63,11 +63,15 @@ const IssueThreadDetail_Page = () => {
             <Grid item lg={12} md={12} sm={12}>
               <Box className={classes.solutionsParentDiv}>
                 <h2>Provided Solutions</h2>
-                <Box className={classes.solutionsChildDiv}>
-                  {allReviews.map((el) => {
-                    return <SolutionThreadComponent elem={el} key={el._id} />;
-                  })}
-                </Box>
+                {allReviews.length < 1 ? (
+                  <p>No solutions provided yet</p>
+                ) : (
+                  <Box className={classes.solutionsChildDiv}>
+                    {allReviews.map((el) => {
+                      return <SolutionThreadComponent elem={el} key={el._id} />;
+                    })}
+                  </Box>
+                )}
               </Box>
             </Grid>
           </Grid>
