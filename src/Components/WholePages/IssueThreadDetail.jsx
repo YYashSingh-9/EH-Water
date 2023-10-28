@@ -4,15 +4,25 @@ import classes from "./IssueThreadDetails.module.css";
 import SolutionThreadComponent from "../ChildComponents/SolutionThreadComponent";
 import { useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
+import { getIssueSolutions } from "../../Store/AsyncFuntions";
 
 const IssueThreadDetail_Page = () => {
   const allIssues = useSelector((state) => state.firstSlice.allIssues);
+  const cookieToken = useSelector((state) => state.firstSlice.cookieTokenVal);
   const { id } = useParams();
 
   const issueGott = allIssues.filter((el) => {
     return el._id === id;
   });
   const issueGot = issueGott[0];
+  console.log(cookieToken);
+  const { data } = useQuery({
+    queryKey: ["issue-solutions"],
+    queryFn: () => {
+      return getIssueSolutions(cookieToken);
+    },
+  });
+  console.log(data);
   console.log(issueGot);
   return (
     <>
