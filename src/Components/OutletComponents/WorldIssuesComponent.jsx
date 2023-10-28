@@ -14,7 +14,6 @@ const WorldIssuesComponent = () => {
   useEffect(() => {
     dispatch(sliceActions.get_token_from_localStorage());
     if (loaderData) {
-      console.log(loaderData);
       if (loaderData.status === "success") {
         dispatch(sliceActions.gettingAllIssues(loaderData.data));
       }

@@ -10,7 +10,6 @@ import { sliceActions } from "../../Store/StoreSlice";
 
 const IssueThreadDetail_Page = () => {
   const allIssues = useSelector((state) => state.firstSlice.allIssues);
-  const cookieToken = useSelector((state) => state.firstSlice.cookieTokenVal);
   const allReviews = useSelector((state) => state.firstSlice.allReviews);
   const dispatch = useDispatch();
   const { id } = useParams();
@@ -19,15 +18,14 @@ const IssueThreadDetail_Page = () => {
     return el._id === id;
   });
   const issueGot = issueGott[0];
-  console.log(cookieToken);
+
   const { data } = useQuery({
     queryKey: ["issue-solutions"],
     queryFn: () => {
       return getIssueSolutions(issueGot._id);
     },
   });
-  console.log(data);
-  console.log(issueGot);
+
   useEffect(() => {
     if (data) {
       if (data.status === "success") {
