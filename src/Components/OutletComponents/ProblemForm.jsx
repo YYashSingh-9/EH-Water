@@ -1,12 +1,27 @@
 import classes from "./ProblemForm.module.css";
 import { Grid, Box } from "@mui/material";
-import FormMain from "../ChildComponents/FormMain";
-import StarsIcon from "@mui/icons-material/Stars";
 import { ContributionModal } from "../WholePages/SolutionModal";
 import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { Form, useActionData, useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { useActionData, useNavigate } from "react-router-dom";
 import { sliceActions } from "../../Store/StoreSlice";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import FormMain from "../ChildComponents/FormMain";
+import StarsIcon from "@mui/icons-material/Stars";
+
+const notifyFn = () => {
+  return toast("Water Issue Shared👍", {
+    position: "top-right",
+    autoClose: 2000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+    theme: "light",
+  });
+};
 
 const ProblemForm = () => {
   const dispatch = useDispatch();
@@ -17,7 +32,10 @@ const ProblemForm = () => {
     dispatch(sliceActions.get_token_from_localStorage());
     if (actionData) {
       if (actionData.status === "Success") {
-        Navigate("/issues");
+        notifyFn();
+        setTimeout(() => {
+          Navigate("/issues");
+        }, 2600);
       }
     }
   }, [actionData]);
@@ -66,6 +84,7 @@ const ProblemForm = () => {
             </Grid>
           </Grid>
         </Box>
+        <ToastContainer />
       </Box>
     </>
   );

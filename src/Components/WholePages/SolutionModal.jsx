@@ -7,6 +7,21 @@ import Modal from "@mui/material/Modal";
 import PersonPinIcon from "@mui/icons-material/PersonPin";
 import { useMutation } from "@tanstack/react-query";
 import { postSolution } from "../../Store/AsyncFuntions";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
+const notifyFn = () => {
+  return toast("Solution Shared👍", {
+    position: "top-right",
+    autoClose: 1000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+    theme: "light",
+  });
+};
 
 const style = {
   position: "absolute",
@@ -45,6 +60,7 @@ const SolutionModal = (props) => {
 
   const solutionPostHandler = () => {
     dataToSend.details = ref.current.value;
+    notifyFn();
     mutate(dataToSend);
   };
   return (
@@ -76,6 +92,7 @@ const SolutionModal = (props) => {
             </Box>
           </Box>
         </Modal>
+        <ToastContainer />
       </div>
     </>
   );
