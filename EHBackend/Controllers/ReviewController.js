@@ -15,7 +15,7 @@ exports.getYourReviews = CatchAsync(async (req, res, next) => {
   });
 });
 exports.id_value_changer = (req, res, next) => {
-  req.params.id = req.body.issueId;
-  console.log(req.body._id);
+  // req.params.id = req.body.issueId;
+  console.log(req.params.id);
   next();
 };

@@ -4,7 +4,7 @@ const AuthController = require("../Controllers/AuthController");
 const reviewRouter = express.Router();
 
 reviewRouter
-  .route("/getIssueReviews")
+  .route("/:id")
   .get(ReviewController.id_value_changer, ReviewController.getYourReviews);
 reviewRouter.use(AuthController.protect);
 reviewRouter

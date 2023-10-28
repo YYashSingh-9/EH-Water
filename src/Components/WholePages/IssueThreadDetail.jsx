@@ -19,7 +19,7 @@ const IssueThreadDetail_Page = () => {
   const { data } = useQuery({
     queryKey: ["issue-solutions"],
     queryFn: () => {
-      return getIssueSolutions(cookieToken);
+      return getIssueSolutions(issueGot._id);
     },
   });
   console.log(data);
