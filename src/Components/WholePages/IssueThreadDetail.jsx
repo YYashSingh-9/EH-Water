@@ -1,8 +1,17 @@
 import { Grid, Box } from "@mui/material";
 import classes from "./IssueThreadDetails.module.css";
 import SolutionThreadComponent from "../ChildComponents/SolutionThreadComponent";
+import { useParams } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 const IssueThreadDetail_Page = () => {
+  const allIssues = useSelector((state) => state.firstSlice.allIssues);
+  const { id } = useParams();
+
+  const issueGot = allIssues.filter((el) => {
+    return el._id === id;
+  });
+  console.log(issueGot);
   return (
     <>
       <Box className={classes.mainDetailPage}>

@@ -33,7 +33,7 @@ const IssueThreadComponent = (props) => {
               <Box
                 className={classes.issueText}
                 onClick={() => {
-                  Navigate("/issues/issue-details");
+                  Navigate(`/issues/issue-details/${_id}`);
                 }}
               >
                 <p>{`${detailFinal} ...`}</p>
