@@ -21,6 +21,10 @@ const IssueSchema = mongoose.Schema({
     type: mongoose.Schema.ObjectId,
     required: [true, "User Id is missing here.."],
   },
+  userName: {
+    type: String,
+    required: [true, "User name is missing , are u logged in?"],
+  },
 });
 
 const IssueThreadModel = mongoose.model("IssueThreadModel", IssueSchema);

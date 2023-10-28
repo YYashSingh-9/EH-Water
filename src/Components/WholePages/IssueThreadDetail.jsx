@@ -1,4 +1,5 @@
 import { Grid, Box } from "@mui/material";
+import { useQuery } from "@tanstack/react-query";
 import classes from "./IssueThreadDetails.module.css";
 import SolutionThreadComponent from "../ChildComponents/SolutionThreadComponent";
 import { useParams } from "react-router-dom";
@@ -23,8 +24,8 @@ const IssueThreadDetail_Page = () => {
         >
           <Grid item lg={12} md={12} sm={12} textAlign={"center"}>
             <Box className={classes.mainIssueInfo}>
-              <h3>Water Leakage near my home</h3>
-              <h4>Chhattisgarh, Bilaspur</h4>
+              <h3>{issueGot.title}</h3>
+              <h4>{`${issueGot.state},${issueGot.city}`}</h4>
               <h4>
                 This issue is raised by -
                 <span className={classes.namespan}> baba blacksheep</span>
