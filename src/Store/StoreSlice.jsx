@@ -12,6 +12,7 @@ const InitialState = {
   issueDetails: "",
   allIssues: [],
   allReviews: [],
+  allPosts: [],
   searchTerm: "",
 };
 
@@ -79,6 +80,10 @@ const FirstSlice = createSlice({
       const finalSearchTerm = searchTerm_uppercase.concat(searchTerm_rest); // making it a whole search elem with first letter as capital
       // const finalSearchTerm = searchTerm.toCapitalize();
       state.searchTerm = finalSearchTerm;
+    },
+    gettingAllPosts(state, action) {
+      const allposts = action.payload;
+      state.allPosts = allposts;
     },
   },
 });

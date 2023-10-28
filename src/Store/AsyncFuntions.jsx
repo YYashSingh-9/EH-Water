@@ -132,7 +132,7 @@ export const getIssueSolutions = async (Id) => {
 };
 
 export const getAllUserPosts = async (cookie) => {
-  const doc = await fetchFunction("reviews", cookie, "getMyposts");
+  const doc = await fetchFunction("user", cookie, "getMyposts");
   console.log(doc);
   return doc;
 };
