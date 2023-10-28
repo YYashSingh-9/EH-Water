@@ -110,7 +110,7 @@ const UserPage = () => {
 
   useEffect(() => {
     dispatch(sliceActions.get_token_from_localStorage());
-    if (action_data && data) {
+    if (action_data) {
       if (action_data.status === "success") {
         dispatch(sliceActions.set_token_to_localStorage(action_data));
       }
