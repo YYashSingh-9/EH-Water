@@ -22,3 +22,13 @@
 .icn:hover {
   background-color: #cccccc;
 }
+
+@media (min-width: 280px) and (max-width: 576px) {
+  .searchBar input {
+    padding: 0.5rem 1rem;
+    font-size: 1.1rem;
+  }
+  .icn {
+    transform: scale(1.1);
+  }
+}

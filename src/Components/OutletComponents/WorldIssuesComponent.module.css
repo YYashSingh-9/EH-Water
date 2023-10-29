@@ -29,3 +29,13 @@
 .issueParent::-webkit-scrollbar {
   display: none;
 }
+
+@media (min-width: 280px) and (max-width: 576px) {
+  .issueCompParent {
+    padding: 1rem 5%;
+  }
+  .issueCompParent h2 {
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 1.5rem;
+  }
+}
