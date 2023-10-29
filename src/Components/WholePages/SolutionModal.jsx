@@ -106,7 +106,7 @@ export const ContributionModal = () => {
     <>
       <div>
         <Button onClick={handleOpen}>
-          <span style={{ fontSize: "1.1rem", fontWeight: "bold" }}>
+          <span className={classes.btnTitle}>
             If You like this app and idea then you can contribute in this app by
             clicking here.
           </span>

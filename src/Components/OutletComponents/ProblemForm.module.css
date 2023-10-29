@@ -60,3 +60,21 @@
   border-color: #1778f2;
   transition: 0.1s ease;
 }
+
+@media (min-width: 280px) and (max-width: 576px) {
+  .title {
+    font-size: 1.1rem;
+  }
+  .impNoteSpan h3 {
+    font-size: 1.1rem;
+  }
+  .impNoteSpan h4 {
+    margin-top: 0.5rem;
+    font-size: 0.8rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .impNoteSpan {
+    margin-left: 1rem;
+  }
+}
