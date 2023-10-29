@@ -12,15 +12,7 @@ export default function BottomNavBar() {
   const [value, setValue] = React.useState(0);
   const Navigate = useNavigate();
   return (
-    <Box
-      sx={{
-        position: "fixed",
-        bottom: 0,
-        left: "15%",
-        backgroundColor: "red",
-        width: "70%",
-      }}
-    >
+    <Box className={classes.boxParent}>
       <BottomNavigation
         showLabels={false}
         value={value}

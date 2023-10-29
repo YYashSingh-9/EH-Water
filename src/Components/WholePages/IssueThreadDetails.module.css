@@ -53,3 +53,19 @@
   color: #1778f2;
   text-decoration: underline;
 }
+
+@media (min-width: 280px) and (max-width: 576px) {
+  .mainIssueInfo h3 {
+    font-size: 1.6rem;
+    text-transform: uppercase;
+  }
+  .mainIssueInfo h4 {
+    font-size: 1.2rem;
+  }
+  .issueText p {
+    font-size: 1.2rem;
+  }
+  .solutionsParentDiv h2 {
+    font-size: 1.5rem;
+  }
+}
