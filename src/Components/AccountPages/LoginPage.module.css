@@ -100,3 +100,32 @@
     font-size: 1.2rem;
   }
 }
+
+@media (min-width: 576px) and (max-width: 768px) {
+  .loginBox {
+    padding: 1rem 10%;
+  }
+  .loginForm label {
+    font-size: 1.3rem;
+  }
+  .loginForm input {
+    margin-bottom: 2rem;
+    margin-top: 1rem;
+    padding: 1rem 1.5rem;
+  }
+  .loginForm button {
+    font-size: 1.1rem;
+  }
+  .switchTitle {
+    font-size: 1.2rem;
+  }
+  .defaultTitle h3 {
+    font-size: 1.4rem;
+  }
+  .defaultTitle h4 {
+    font-size: 1.4rem;
+  }
+  .title {
+    font-size: 1.4rem;
+  }
+}
