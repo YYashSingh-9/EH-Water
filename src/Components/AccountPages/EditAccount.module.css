@@ -8,6 +8,10 @@
   border-top: 0;
   border-bottom: 0;
 }
+.mainEditPage::-webkit-scrollbar {
+  display: none;
+}
+
 .title {
   color: rgb(28, 28, 28);
   font-size: 1.7rem;
@@ -65,4 +69,25 @@
 }
 .pwForm input:active {
   background-color: #f8f8f8;
+}
+
+@media (min-width: 280px) and (max-width: 576px) {
+  .mainEditPage {
+    padding: 1rem 5%;
+  }
+  .editForm label,
+  .pwForm label {
+    font-size: 1.1rem;
+  }
+  .editForm input,
+  .pwForm input {
+    font-size: 1.2rem;
+    padding: 0.5rem 1rem;
+    margin-bottom: 1.2rem;
+  }
+  .pwForm button,
+  .editForm button {
+    font-size: 1rem;
+    margin-top: 1rem;
+  }
 }
