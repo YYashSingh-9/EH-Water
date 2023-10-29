@@ -97,3 +97,18 @@
     padding-right: 1rem;
   }
 }
+@media (min-width: 768px) and (max-width: 992px) {
+  .impNoteSpan h3 {
+    font-size: 1.2rem;
+  }
+  .impNoteSpan h4 {
+    margin-top: 0.5rem;
+    font-size: 0.8rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .impNoteSpan {
+    margin-left: 1rem;
+    padding-right: 1rem;
+  }
+}

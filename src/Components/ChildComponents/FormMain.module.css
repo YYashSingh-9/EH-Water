@@ -110,3 +110,13 @@ textarea {
     margin-bottom: 0.5rem;
   }
 }
+@media (min-width: 768px) and (max-width: 992px) {
+  .inputForm textarea {
+    height: 11rem;
+    margin-top: 0rem;
+    margin-bottom: 0.5rem;
+  }
+  .inputForm select {
+    width: 59%;
+  }
+}
