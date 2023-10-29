@@ -49,7 +49,7 @@ export const dataSendRequest = async (
       Authorization: `Bearer ${cookie}`,
       "Content-type": "application/json",
       Accept: "application/json",
-      "Access-Control-Allow-Origin": "http://localhost:3000",
+      // "Access-Control-Allow-Origin": "http://localhost:3000",
       cookie: `jwt=${cookie}`,
     },
     body: sending_data,
