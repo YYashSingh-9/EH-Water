@@ -32,7 +32,7 @@
 
 @media (min-width: 280px) and (max-width: 576px) {
   .btnTitle {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
   }
   .textModal {
     width: 20rem;
