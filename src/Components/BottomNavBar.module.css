@@ -40,3 +40,18 @@
     left: 0;
   }
 }
+@media (min-width: 576px) and (max-width: 768px) {
+  .navBar {
+    max-width: 100%;
+  }
+  .boxdiv {
+    width: 100%;
+  }
+  .nav {
+    border-width: 100%;
+  }
+  .boxParent {
+    width: 80%;
+    left: 10%;
+  }
+}
