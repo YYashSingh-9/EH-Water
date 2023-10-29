@@ -41,7 +41,7 @@ const SignupUser = () => {
             <Box
               className={classes.switchTitle}
               onClick={() => {
-                Navigate("/login");
+                Navigate("/user-details");
               }}
             >
               <h4>Already signedup? Login then.</h4>

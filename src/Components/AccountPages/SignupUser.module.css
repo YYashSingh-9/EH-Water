@@ -50,21 +50,27 @@
 .switchTitle:hover {
   color: #0d458a;
 }
-.defaultTitle {
-  max-width: 100%;
-  padding: 1rem;
-  text-align: center;
-  border: 0.1rem solid #cccccc;
-  border-radius: 1rem;
-  box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
-}
-.defaultTitle h3 {
-  font-size: 1.5rem;
-  text-decoration: underline;
-  color: #1778f2;
-  text-transform: uppercase;
-  font-weight: 800;
-}
-.defaultTitle h4 {
-  font-size: 1.3rem;
+
+@media (min-width: 280px) and (max-width: 576px) {
+  .loginBox {
+    padding: 1rem 5%;
+  }
+  .loginForm label {
+    font-size: 1.1rem;
+  }
+  .loginForm input {
+    margin-bottom: 2rem;
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+  }
+  .loginForm button {
+    font-size: 1.1rem;
+  }
+  .title {
+    font-size: 1.2rem;
+    text-transform: uppercase;
+  }
+  .switchTitle {
+    font-size: 1.1rem;
+  }
 }

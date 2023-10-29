@@ -18,7 +18,6 @@ const LoginPage = () => {
       }
     }
   }, [action_data]);
-  console.log(action_data);
   return (
     <>
       <Box className={classes.loginBox}>

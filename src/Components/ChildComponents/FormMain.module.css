@@ -76,4 +76,8 @@ textarea {
 
     font-weight: 600;
   }
+  .inputForm textarea {
+    height: 10rem;
+    margin-top: 0rem;
+  }
 }
