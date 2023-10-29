@@ -129,3 +129,12 @@
     font-size: 1.4rem;
   }
 }
+
+@media (min-width: 768px) and (max-width: 992px) {
+  .defaultTitle h3 {
+    font-size: 1.4rem;
+  }
+  .defaultTitle h4 {
+    font-size: 1.4rem;
+  }
+}
