@@ -32,3 +32,13 @@
 .btn button:hover {
   background-color: #daebff;
 }
+
+@media (min-width: 280px) and (max-width: 576px) {
+  .titleNlocation h3 {
+    font-size: 1.2rem;
+    font-weight: 700;
+  }
+  .issueText p {
+    font-size: 1.1rem;
+  }
+}
