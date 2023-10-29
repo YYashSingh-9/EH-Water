@@ -49,3 +49,22 @@
     text-transform: capitalize;
   }
 }
+@media (min-width: 576px) and (max-width: 768px) {
+  .btnTitle {
+    font-size: 1rem;
+  }
+  .textModal {
+    width: 35rem;
+  }
+  .textModal h2 {
+    text-transform: capitalize;
+  }
+  .txtArea {
+    font-size: 1.2rem;
+    padding: 1rem 1rem;
+    height: 10rem;
+    width: 80%;
+    border: 0.1rem solid #cccccc;
+    text-transform: capitalize;
+  }
+}

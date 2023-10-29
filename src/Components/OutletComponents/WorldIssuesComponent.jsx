@@ -47,11 +47,15 @@ const WorldIssuesComponent = () => {
             <Divider sx={{ marginTop: "0.5rem" }} />
           </Grid>
           <Grid item lg={12} md={12} sm={12} xs={12} textAlign={"center"}>
-            <Box className={classes.issueParent}>
-              {searchedArray.map((el) => {
-                return <IssueThreadComponent elem={el} key={el._id} />;
-              })}
-            </Box>
+            {searchedArray.length < 1 ? (
+              <p>Loading.. please wait</p>
+            ) : (
+              <Box className={classes.issueParent}>
+                {searchedArray.map((el) => {
+                  return <IssueThreadComponent elem={el} key={el._id} />;
+                })}
+              </Box>
+            )}
           </Grid>
         </Grid>
       </Box>

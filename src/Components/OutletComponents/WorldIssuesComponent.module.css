@@ -39,3 +39,12 @@
     font-size: 1.5rem;
   }
 }
+@media (min-width: 576px) and (max-width: 768px) {
+  .issueCompParent {
+    padding: 1rem 10%;
+  }
+  .issueCompParent h2 {
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 1.5rem;
+  }
+}
