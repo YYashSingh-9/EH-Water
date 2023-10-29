@@ -1,12 +1,17 @@
 .formMain {
   max-width: 100%;
-  max-height: 80vh;
+  height: 80vh;
+  overflow-y: scroll;
+  padding-bottom: 8rem;
   padding: 1rem 10%;
   color: rgb(73, 73, 73);
   border: 0.1rem solid #cccccc;
   border-top: none;
   border-bottom: none;
   font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+}
+.formMain::-webkit-scrollbar {
+  display: none;
 }
 .impNote {
   display: flex;
@@ -71,7 +76,9 @@
     overflow-y: scroll;
     padding-bottom: 8rem;
   }
-
+  .formMain::-webkit-scrollbar {
+    display: none;
+  }
   .impNoteSpan h3 {
     font-size: 1.1rem;
   }
@@ -113,6 +120,22 @@
   .impNoteSpan h4 {
     margin-top: 0.5rem;
     font-size: 0.8rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .impNoteSpan {
+    margin-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+@media (min-width: 993px) and (max-width: 1400px) {
+  .impNoteSpan h3 {
+    font-size: 1.3rem;
+  }
+  .impNoteSpan h4 {
+    margin-top: 0.5rem;
+    font-size: 1rem;
     margin-bottom: 0.5rem;
   }
 

@@ -120,3 +120,24 @@ textarea {
     width: 59%;
   }
 }
+
+@media (min-width: 993px) and (max-width: 1200px) {
+  .inputForm textarea {
+    height: 11rem;
+    margin-top: 0rem;
+    margin-bottom: 0.5rem;
+  }
+  .inputForm select {
+    width: 57%;
+  }
+}
+@media (min-width: 1200px) and (max-width: 1400px) {
+  .inputForm textarea {
+    height: 11rem;
+    margin-top: 0rem;
+    margin-bottom: 0.5rem;
+  }
+  .inputForm select {
+    width: 56%;
+  }
+}
