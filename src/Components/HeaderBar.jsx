@@ -23,13 +23,13 @@ const HeaderBar = () => {
               alignItems={"center"}
               sx={{ maxHeight: "10rem" }}
             >
-              <Grid item lg={8} md={8} sm={8} textAlign={"center"}>
+              <Grid item lg={8} md={6} sm={6} textAlign={"center"}>
                 <Box className={classes.logos}>
                   <img src={Logo} />
                   <span className={classes.betaTag}>Beta</span>
                 </Box>
               </Grid>
-              <Grid item lg={4} md={4} sm={4} textAlign={"right"}>
+              <Grid item lg={4} md={6} sm={6} textAlign={"right"}>
                 <img src={g20Logo} className={classes.g20Img} />
               </Grid>
             </Grid>
