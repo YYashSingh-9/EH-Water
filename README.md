@@ -17,7 +17,7 @@
 
 <h2>Important points.</h2>
    <h2>Open to suggestions🤠</h2>
-   <h3>This project is Beta version.</h3>
+   <h3>This project is Beta version</h3>
    <h3>EH-Water is a solution for people who are facing water related issue and their issue is not getting resolved or some how their problem has not been brought infront of the government .. so with this app people will share their issues and other people will get to know about that and also if they have a solution then they can provide a solution too..also with this platform government can easily track and interact with peoples directly..</h3>
    <br/>
    <h4>This project's backend is hosted on Render free verison so it may take few seconds on first load of "WORLD ISSUES page or USER PAGE depends which is clicked first but once the backend connection is established it will absolutely great".So please wait for few seconds or reload the page again. <hr/> The experience would be worth the wait.</h4>
